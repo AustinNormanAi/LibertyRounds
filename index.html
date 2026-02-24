@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LibertyRounds - Compact Magnetic Ammo Carrier | Made in America</title>
+<meta name="description" content="10-round magnetic ammo carrier for 9mm and .45 ACP. Silent, pocketable, American-made. Carry smarter.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --red:#B91C1C;--red-bright:#DC2626;--red-glow:rgba(220,38,38,0.3);
+    --gold:#D4A843;--gold-light:#E8C965;
+    --dark:#0A0A0A;--darker:#050505;
+    --gray:#131313;--gray-card:#161616;
+    --text:#E8E8E8;--text-dim:#999;--border:#1E1E1E;
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;background:var(--darker);color:var(--text);overflow-x:hidden;}
+
+  /* ===== ANNOUNCE ===== */
+  .announce{background:linear-gradient(90deg,#7F1D1D,var(--red),#7F1D1D);text-align:center;padding:11px 20px;font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;color:white;}
+  .announce span{color:var(--gold-light);font-weight:700;}
+
+  /* ===== NAV ===== */
+  nav{background:rgba(5,5,5,0.92);backdrop-filter:blur(12px);padding:14px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border);}
+  .logo{font-family:'Oswald',sans-serif;font-size:26px;font-weight:700;color:white;text-decoration:none;letter-spacing:3px;text-transform:uppercase;}
+  .logo span{color:var(--red-bright);}
+  .nav-links{display:flex;gap:28px;align-items:center;}
+  .nav-links a{color:#777;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:1.5px;transition:color 0.3s;font-weight:500;}
+  .nav-links a:hover{color:white;}
+  .nav-cta{background:var(--red)!important;color:white!important;padding:10px 24px!important;border-radius:4px;font-weight:600!important;transition:all 0.3s!important;}
+  .nav-cta:hover{background:var(--red-bright)!important;}
+
+  /* ===== STICKY BUY BAR ===== */
+  .sticky-bar{position:fixed;bottom:0;left:0;right:0;background:rgba(10,10,10,0.95);backdrop-filter:blur(12px);border-top:1px solid var(--red);padding:12px 30px;display:flex;justify-content:center;align-items:center;gap:20px;z-index:99;transform:translateY(100%);transition:transform 0.4s ease;}
+  .sticky-bar.visible{transform:translateY(0);}
+  .sticky-bar-text{font-family:'Oswald',sans-serif;font-size:15px;text-transform:uppercase;letter-spacing:1px;color:var(--text-dim);}
+  .sticky-bar-text strong{color:white;}
+  .sticky-bar-btn{background:var(--red);color:white;padding:10px 30px;border:none;border-radius:4px;font-family:'Oswald',sans-serif;font-size:14px;text-transform:uppercase;letter-spacing:2px;cursor:pointer;text-decoration:none;transition:all 0.3s;}
+  .sticky-bar-btn:hover{background:var(--red-bright);}
+
+  /* ===== HERO — FULL BLEED LIFESTYLE ===== */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
+  .hero-bg{position:absolute;top:0;left:0;right:0;bottom:0;background:url('images/dramatic-studio.jpg') center/cover no-repeat;z-index:0;}
+  .hero-bg::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(180deg,rgba(5,5,5,0.5) 0%,rgba(5,5,5,0.65) 40%,rgba(5,5,5,0.85) 100%);}
+  .hero-content{position:relative;z-index:2;max-width:800px;padding:40px 30px;}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(185,28,28,0.15);border:1px solid rgba(185,28,28,0.5);padding:10px 22px;border-radius:50px;font-size:12px;text-transform:uppercase;letter-spacing:2.5px;color:var(--red-bright);margin-bottom:28px;font-weight:600;font-family:'Oswald',sans-serif;}
+  .hero h1{font-family:'Oswald',sans-serif;font-size:clamp(44px,6vw,80px);font-weight:700;line-height:1.0;text-transform:uppercase;margin-bottom:24px;text-shadow:0 4px 30px rgba(0,0,0,0.5);}
+  .hero h1 .red{color:var(--red-bright);}
+  .hero h1 .gold{color:var(--gold);}
+  .hero-sub{font-size:19px;color:rgba(255,255,255,0.75);margin-bottom:8px;line-height:1.65;font-weight:300;max-width:600px;margin-left:auto;margin-right:auto;}
+  .hero-sub strong{color:white;font-weight:600;}
+  .hero-ctas{display:flex;gap:15px;margin-top:35px;justify-content:center;flex-wrap:wrap;}
+  .btn-primary{background:var(--red);color:white;padding:18px 48px;border:none;border-radius:4px;font-family:'Oswald',sans-serif;font-size:18px;text-transform:uppercase;letter-spacing:2px;cursor:pointer;transition:all 0.3s;text-decoration:none;display:inline-flex;align-items:center;gap:10px;}
+  .btn-primary:hover{background:var(--red-bright);transform:translateY(-2px);box-shadow:0 8px 30px var(--red-glow);}
+  .btn-secondary{background:rgba(255,255,255,0.08);color:white;padding:18px 48px;border:1px solid rgba(255,255,255,0.2);border-radius:4px;font-family:'Oswald',sans-serif;font-size:18px;text-transform:uppercase;letter-spacing:2px;cursor:pointer;transition:all 0.3s;text-decoration:none;}
+  .btn-secondary:hover{border-color:var(--gold);color:var(--gold);background:rgba(212,168,67,0.05);}
+  .hero-trust{display:flex;gap:30px;margin-top:35px;justify-content:center;flex-wrap:wrap;}
+  .trust-item{font-size:13px;color:rgba(255,255,255,0.45);display:flex;align-items:center;gap:6px;}
+  .trust-item strong{color:rgba(255,255,255,0.75);}
+  .hero-urgency{margin-top:20px;font-size:13px;color:var(--red-bright);font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:2px;animation:pulse 2s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.6;}}
+  .hero-scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,0.3);font-size:12px;text-transform:uppercase;letter-spacing:3px;font-family:'Oswald',sans-serif;display:flex;flex-direction:column;align-items:center;gap:8px;}
+  .hero-scroll::after{content:'';width:1px;height:30px;background:linear-gradient(180deg,rgba(255,255,255,0.3),transparent);}
+
+  /* ===== SOCIAL PROOF BAR ===== */
+  .proof-bar{background:var(--dark);border-bottom:1px solid var(--border);padding:20px 40px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap;}
+  .proof-stat{text-align:center;}
+  .proof-stat .num{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;color:white;}
+  .proof-stat .num span{color:var(--red-bright);}
+  .proof-stat .label{font-size:11px;color:#555;text-transform:uppercase;letter-spacing:2px;margin-top:2px;}
+
+  /* ===== PAIN POINT BANNER ===== */
+  .pain-banner{background:var(--gray);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:60px 40px;}
+  .pain-inner{max-width:900px;margin:0 auto;text-align:center;}
+  .pain-inner h2{font-family:'Oswald',sans-serif;font-size:clamp(22px,3vw,30px);text-transform:uppercase;margin-bottom:12px;font-weight:400;color:var(--text-dim);line-height:1.4;}
+  .pain-inner h2 strong{color:white;font-weight:700;}
+  .pain-inner p{color:#555;font-size:16px;line-height:1.7;max-width:650px;margin:0 auto;}
+  .pain-inner p strong{color:var(--text-dim);}
+
+  /* ===== LIFESTYLE SHOWCASE ===== */
+  .life-section{padding:0;overflow:hidden;}
+  .life-row{display:grid;grid-template-columns:1fr 1fr;min-height:520px;}
+  .life-row.reverse{direction:rtl;}
+  .life-row.reverse>*{direction:ltr;}
+  .life-img{background-size:cover;background-position:center;min-height:520px;}
+  .life-text{display:flex;flex-direction:column;justify-content:center;padding:60px 55px;}
+  .life-label{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--red-bright);margin-bottom:12px;}
+  .life-text h3{font-family:'Oswald',sans-serif;font-size:clamp(26px,3vw,36px);text-transform:uppercase;line-height:1.1;margin-bottom:18px;}
+  .life-text h3 .gold{color:var(--gold);}
+  .life-text h3 .red{color:var(--red-bright);}
+  .life-text p{color:var(--text-dim);line-height:1.75;font-size:15px;margin-bottom:14px;}
+  .life-text p strong{color:white;}
+  .life-check{list-style:none;margin-top:8px;}
+  .life-check li{padding:6px 0;font-size:14px;color:#bbb;display:flex;align-items:center;gap:10px;}
+  .life-check li::before{content:'\2713';color:var(--red-bright);font-weight:bold;flex-shrink:0;}
+
+  /* ===== EDC SECTION ===== */
+  .edc-section{position:relative;padding:100px 40px;overflow:hidden;}
+  .edc-bg{position:absolute;top:0;left:0;right:0;bottom:0;background:url('images/edc-flatlay.jpg') center/cover no-repeat;z-index:0;}
+  .edc-bg::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(5,5,5,0.9) 0%,rgba(5,5,5,0.65) 50%,rgba(5,5,5,0.35) 100%);}
+  .edc-content{position:relative;z-index:2;max-width:520px;}
+  .edc-content h2{font-family:'Oswald',sans-serif;font-size:clamp(28px,4vw,44px);text-transform:uppercase;line-height:1.05;margin-bottom:18px;}
+  .edc-content h2 .gold{color:var(--gold);}
+  .edc-content p{color:rgba(255,255,255,0.7);line-height:1.75;font-size:15px;margin-bottom:12px;}
+  .edc-content p strong{color:white;}
+  .edc-items{display:flex;gap:15px;margin-top:25px;flex-wrap:wrap;}
+  .edc-item{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px 16px;font-size:12px;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:1px;font-family:'Oswald',sans-serif;}
+  .edc-item span{color:var(--red-bright);margin-right:6px;}
+
+  /* ===== PRODUCT SHOWCASE (centered image + text) ===== */
+  .product-show{padding:80px 40px;max-width:1100px;margin:0 auto;}
+  .product-show-row{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:60px;}
+  .product-show-row:last-child{margin-bottom:0;}
+  .product-show-row.reverse{direction:rtl;}
+  .product-show-row.reverse>*{direction:ltr;}
+  .product-show-img{text-align:center;}
+  .product-show-img img{max-width:350px;width:100%;filter:drop-shadow(0 15px 30px rgba(0,0,0,0.5));transition:transform 0.4s;}
+  .product-show-img:hover img{transform:scale(1.04);}
+  .product-show-text h3{font-family:'Oswald',sans-serif;font-size:28px;text-transform:uppercase;margin-bottom:14px;}
+  .product-show-text p{color:var(--text-dim);line-height:1.75;font-size:15px;margin-bottom:12px;}
+  .product-show-text p strong{color:white;}
+
+  /* ===== FEATURES GRID ===== */
+  .features{padding:100px 40px;max-width:1200px;margin:0 auto;}
+  .section-header{text-align:center;margin-bottom:55px;}
+  .section-label{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--red-bright);margin-bottom:14px;}
+  .section-title{font-family:'Oswald',sans-serif;font-size:clamp(28px,4vw,46px);font-weight:700;text-transform:uppercase;line-height:1.1;}
+  .section-title .gold{color:var(--gold);}
+  .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .feature-card{background:var(--gray-card);border:1px solid var(--border);border-radius:10px;padding:30px 26px;transition:all 0.3s;}
+  .feature-card:hover{border-color:rgba(185,28,28,0.4);transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.3);}
+  .feature-icon{width:46px;height:46px;background:rgba(185,28,28,0.1);border:1px solid rgba(185,28,28,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:16px;}
+  .feature-card h3{font-family:'Oswald',sans-serif;font-size:17px;text-transform:uppercase;margin-bottom:10px;letter-spacing:1px;}
+  .feature-card p{color:var(--text-dim);line-height:1.65;font-size:13px;}
+
+  /* ===== FULL-WIDTH BANNER ===== */
+  .full-banner{position:relative;min-height:420px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
+  .full-banner .bg{position:absolute;top:0;left:0;right:0;bottom:0;background-size:cover;background-position:center;z-index:0;}
+  .full-banner .bg::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(5,5,5,0.72);}
+  .full-banner-content{position:relative;z-index:2;max-width:700px;padding:40px;}
+  .full-banner-content h2{font-family:'Oswald',sans-serif;font-size:clamp(26px,4vw,42px);text-transform:uppercase;margin-bottom:15px;line-height:1.1;}
+  .full-banner-content p{color:rgba(255,255,255,0.6);font-size:16px;line-height:1.7;margin-bottom:25px;}
+
+  /* ===== GALLERY ===== */
+  .gallery{padding:0;overflow:hidden;}
+  .gallery-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;}
+  .gallery-strip img{width:100%;height:220px;object-fit:cover;transition:all 0.4s;filter:brightness(0.8);}
+  .gallery-strip img:hover{filter:brightness(1);transform:scale(1.03);}
+
+  /* ===== COMPARISON ===== */
+  .comparison{padding:100px 40px;max-width:900px;margin:0 auto;}
+  .comp-table{width:100%;border-collapse:collapse;margin-top:40px;}
+  .comp-table th,.comp-table td{padding:15px 18px;text-align:left;border-bottom:1px solid var(--border);font-size:14px;}
+  .comp-table thead th{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:13px;color:var(--text-dim);border-bottom:2px solid #222;}
+  .comp-table thead th:nth-child(2){color:var(--red-bright);background:rgba(185,28,28,0.06);}
+  .comp-table td:nth-child(2){background:rgba(185,28,28,0.03);color:white;font-weight:500;}
+  .comp-table td:nth-child(3){color:#555;}
+  .comp-check{color:#22C55E;}.comp-x{color:#444;}
+
+  /* ===== PRICING ===== */
+  .pricing{padding:100px 40px;background:var(--gray);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .pricing-cards{max-width:900px;margin:50px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  .price-card{background:var(--dark);border:1px solid #222;border-radius:14px;padding:40px 35px;text-align:center;position:relative;transition:all 0.3s;}
+  .price-card:hover{border-color:rgba(185,28,28,0.5);transform:translateY(-5px);box-shadow:0 15px 40px rgba(0,0,0,0.4);}
+  .price-card.popular{border-color:var(--red);box-shadow:0 0 40px rgba(185,28,28,0.15);}
+  .popular-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--red);color:white;padding:5px 22px;border-radius:20px;font-size:11px;text-transform:uppercase;letter-spacing:2.5px;font-family:'Oswald',sans-serif;white-space:nowrap;}
+  .price-card h3{font-family:'Oswald',sans-serif;font-size:22px;text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;}
+  .price-card .caliber{color:var(--text-dim);font-size:13px;margin-bottom:18px;}
+  .price-card .price{font-family:'Oswald',sans-serif;font-size:56px;font-weight:700;margin:18px 0;}
+  .price-card .price sup{font-size:22px;top:-18px;color:var(--text-dim);}
+  .price-card .price-note{font-size:12px;color:#555;margin-bottom:22px;}
+  .price-card ul{list-style:none;margin-bottom:28px;text-align:left;}
+  .price-card ul li{padding:6px 0;font-size:13px;color:var(--text-dim);display:flex;align-items:center;gap:10px;}
+  .price-card ul li::before{content:'\2713';color:var(--red-bright);font-weight:bold;}
+  .price-btn{display:block;width:100%;padding:16px;background:var(--red);color:white;border:none;border-radius:6px;font-family:'Oswald',sans-serif;font-size:15px;text-transform:uppercase;letter-spacing:2px;cursor:pointer;transition:all 0.3s;text-decoration:none;}
+  .price-btn:hover{background:var(--red-bright);box-shadow:0 5px 20px var(--red-glow);}
+  .price-urgency{margin-top:12px;font-size:12px;color:var(--red-bright);font-family:'Oswald',sans-serif;letter-spacing:1px;text-transform:uppercase;}
+
+  /* ===== TESTIMONIALS ===== */
+  .testimonials{padding:100px 40px;max-width:1200px;margin:0 auto;}
+  .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px;}
+  .test-card{background:var(--gray-card);border:1px solid var(--border);border-radius:10px;padding:28px;}
+  .test-stars{color:var(--gold);font-size:16px;margin-bottom:14px;letter-spacing:2px;}
+  .test-card p{color:var(--text-dim);line-height:1.7;font-size:14px;margin-bottom:18px;font-style:italic;}
+  .test-author{font-weight:600;color:white;font-size:13px;}
+  .test-verified{font-size:11px;color:var(--red-bright);margin-top:3px;letter-spacing:0.5px;}
+
+  /* ===== FAQ ===== */
+  .faq{padding:100px 40px;max-width:800px;margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--border);padding:22px 0;}
+  .faq-q{font-family:'Oswald',sans-serif;font-size:17px;text-transform:uppercase;cursor:pointer;display:flex;justify-content:space-between;align-items:center;letter-spacing:0.5px;transition:color 0.3s;}
+  .faq-q:hover{color:var(--red-bright);}
+  .faq-q::after{content:'+';font-size:22px;color:var(--red-bright);flex-shrink:0;margin-left:15px;}
+  .faq-a{color:var(--text-dim);line-height:1.7;padding-top:14px;font-size:14px;display:none;}
+  .faq-item.open .faq-a{display:block;}
+  .faq-item.open .faq-q::after{content:'\2212';}
+
+  /* ===== FINAL CTA ===== */
+  .final-cta{position:relative;padding:120px 40px;text-align:center;overflow:hidden;}
+  .final-cta .bg{position:absolute;top:0;left:0;right:0;bottom:0;background:url('images/campfire.jpg') center/cover no-repeat;z-index:0;}
+  .final-cta .bg::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(5,5,5,0.8);}
+  .final-cta-content{position:relative;z-index:2;}
+  .final-cta h2{font-family:'Oswald',sans-serif;font-size:clamp(32px,4vw,54px);text-transform:uppercase;margin-bottom:18px;}
+  .final-cta p{color:rgba(255,255,255,0.6);font-size:17px;max-width:600px;margin:0 auto 32px;line-height:1.7;}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--dark);border-top:1px solid var(--border);padding:50px 40px 30px;}
+  .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;}
+  .footer-brand .logo{font-size:22px;}
+  .footer-brand p{color:#555;font-size:13px;margin-top:10px;max-width:280px;line-height:1.6;}
+  .footer-links h4{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:2px;font-size:12px;margin-bottom:14px;color:#555;}
+  .footer-links a{display:block;color:#444;text-decoration:none;font-size:13px;padding:3px 0;transition:color 0.3s;}
+  .footer-links a:hover{color:white;}
+  .footer-bottom{max-width:1200px;margin:30px auto 0;padding-top:20px;border-top:1px solid var(--border);text-align:center;color:#333;font-size:12px;}
+
+  /* ===== MOBILE-ONLY ELEMENTS ===== */
+  .mobile-cta{display:none;}
+
+  /* ===== TABLET (max 900px) ===== */
+  @media(max-width:900px){
+    .features-grid{grid-template-columns:repeat(2,1fr);}
+    .life-row,.life-row.reverse{grid-template-columns:1fr;direction:ltr;}
+    .life-img{min-height:300px;}
+    .product-show-row,.product-show-row.reverse{grid-template-columns:1fr;direction:ltr;text-align:center;gap:30px;}
+    .pricing-cards{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto;}
+    .test-grid{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+  }
+
+  /* ===== MOBILE (max 600px) ===== */
+  @media(max-width:600px){
+    /* --- Announce --- */
+    .announce{font-size:10px;padding:9px 12px;letter-spacing:1.5px;}
+
+    /* --- Nav --- */
+    nav{padding:10px 16px;}
+    .logo{font-size:22px;letter-spacing:2px;}
+    .nav-links{display:none;}
+
+    /* --- Sticky bar --- */
+    .sticky-bar{padding:10px 16px;gap:10px;flex-wrap:nowrap;}
+    .sticky-bar-text{font-size:11px;white-space:nowrap;}
+    .sticky-bar-text strong{display:none;}
+    .sticky-bar-btn{padding:10px 20px;font-size:13px;letter-spacing:1.5px;white-space:nowrap;}
+
+    /* --- HERO (full conversion focus) --- */
+    .hero{min-height:100vh;min-height:100dvh;padding:30px 20px 40px;}
+    .hero-bg::after{background:linear-gradient(180deg,rgba(5,5,5,0.45) 0%,rgba(5,5,5,0.7) 35%,rgba(5,5,5,0.88) 100%);}
+    .hero-content{padding:20px 0;}
+    .hero-badge{font-size:10px;padding:7px 14px;letter-spacing:1.8px;margin-bottom:20px;}
+    .hero h1{font-size:40px;line-height:1.0;margin-bottom:18px;}
+    .hero-sub{font-size:15px;line-height:1.55;margin-bottom:6px;padding:0 5px;}
+    .hero-ctas{flex-direction:column;align-items:stretch;gap:10px;margin-top:24px;padding:0 10px;}
+    .btn-primary{width:100%;justify-content:center;text-align:center;padding:16px 20px;font-size:16px;letter-spacing:1.5px;border-radius:6px;}
+    .btn-secondary{width:100%;justify-content:center;text-align:center;padding:14px 20px;font-size:14px;letter-spacing:1.5px;border-radius:6px;}
+    .hero-trust{gap:6px;margin-top:22px;flex-direction:column;align-items:center;}
+    .trust-item{font-size:12px;}
+    .hero-urgency{font-size:11px;letter-spacing:1.5px;margin-top:14px;}
+    .hero-scroll{display:none;}
+
+    /* --- Social proof bar --- */
+    .proof-bar{padding:16px 12px;gap:4px;display:grid;grid-template-columns:repeat(4,1fr);}
+    .proof-stat .num{font-size:20px;}
+    .proof-stat .label{font-size:9px;letter-spacing:1px;}
+
+    /* --- Mobile-only early CTA --- */
+    .mobile-cta{display:block;padding:25px 20px;text-align:center;background:var(--dark);border-bottom:1px solid var(--border);}
+    .mobile-cta a{display:block;width:100%;padding:16px;background:var(--red);color:white;border-radius:8px;font-family:'Oswald',sans-serif;font-size:16px;text-transform:uppercase;letter-spacing:2px;text-decoration:none;transition:all 0.3s;}
+    .mobile-cta a:hover{background:var(--red-bright);}
+    .mobile-cta p{font-size:11px;color:#555;margin-top:8px;text-transform:uppercase;letter-spacing:1px;font-family:'Oswald',sans-serif;}
+
+    /* --- Pain banner --- */
+    .pain-banner{padding:40px 20px;}
+    .pain-inner h2{font-size:20px;line-height:1.4;}
+    .pain-inner p{font-size:14px;}
+
+    /* --- Lifestyle sections --- */
+    .life-row,.life-row.reverse{grid-template-columns:1fr;direction:ltr;}
+    .life-img{min-height:240px;}
+    .life-text{padding:30px 20px 35px;}
+    .life-label{font-size:11px;letter-spacing:3px;margin-bottom:10px;}
+    .life-text h3{font-size:26px;margin-bottom:14px;}
+    .life-text p{font-size:14px;line-height:1.7;margin-bottom:12px;}
+    .life-check li{font-size:13px;padding:5px 0;}
+
+    /* --- EDC section --- */
+    .edc-section{padding:50px 20px;}
+    .edc-bg::after{background:rgba(5,5,5,0.9);}
+    .edc-content h2{font-size:28px;}
+    .edc-content p{font-size:14px;}
+    .edc-items{gap:10px;}
+    .edc-item{padding:10px 14px;font-size:11px;}
+
+    /* --- Product showcase (transparent PNGs) --- */
+    .product-show{padding:50px 20px;}
+    .product-show-row,.product-show-row.reverse{grid-template-columns:1fr;direction:ltr;text-align:center;gap:25px;margin-bottom:50px;}
+    .product-show-img img{max-width:220px;}
+    .product-show-text h3{font-size:24px;}
+    .product-show-text p{font-size:14px;}
+
+    /* --- Features grid --- */
+    .features{padding:60px 20px;}
+    .features-grid{grid-template-columns:1fr;gap:16px;}
+    .feature-card{padding:24px 20px;}
+    .feature-icon{width:42px;height:42px;font-size:18px;margin-bottom:14px;}
+    .feature-card h3{font-size:16px;}
+    .feature-card p{font-size:13px;}
+
+    /* --- Gallery --- */
+    .gallery-strip{grid-template-columns:repeat(2,1fr);gap:2px;}
+    .gallery-strip img{height:160px;}
+
+    /* --- Full banner --- */
+    .full-banner{min-height:320px;}
+    .full-banner-content{padding:30px 20px;}
+    .full-banner-content h2{font-size:24px;}
+    .full-banner-content p{font-size:14px;margin-bottom:20px;}
+
+    /* --- Comparison table --- */
+    .comparison{padding:60px 16px;}
+    .comp-table{font-size:12px;}
+    .comp-table th,.comp-table td{padding:11px 8px;}
+
+    /* --- PRICING (key conversion area on mobile) --- */
+    .pricing{padding:60px 20px;}
+    .pricing-cards{grid-template-columns:1fr;max-width:100%;gap:20px;}
+    .price-card{padding:30px 24px;border-radius:12px;}
+    .price-card h3{font-size:20px;}
+    .price-card .price{font-size:50px;margin:14px 0;}
+    .price-card .price sup{font-size:20px;}
+    .price-card ul li{font-size:13px;padding:6px 0;}
+    .price-btn{padding:16px;font-size:16px;border-radius:8px;letter-spacing:1.5px;}
+    .price-urgency{font-size:11px;margin-top:10px;}
+
+    /* --- Testimonials --- */
+    .testimonials{padding:60px 20px;}
+    .test-grid{grid-template-columns:1fr;gap:16px;}
+    .test-card{padding:22px;}
+    .test-card p{font-size:13px;}
+
+    /* --- FAQ --- */
+    .faq{padding:60px 20px;}
+    .faq-q{font-size:15px;}
+    .faq-a{font-size:13px;}
+
+    /* --- Final CTA --- */
+    .final-cta{padding:80px 20px;}
+    .final-cta h2{font-size:30px;}
+    .final-cta p{font-size:15px;}
+    .final-cta .btn-primary{width:100%;max-width:340px;justify-content:center;font-size:16px!important;padding:16px 30px!important;}
+
+    /* --- Section headers (global) --- */
+    .section-header{margin-bottom:35px;}
+    .section-label{font-size:11px;letter-spacing:3px;margin-bottom:10px;}
+    .section-title{font-size:26px;}
+
+    /* --- Footer --- */
+    footer{padding:35px 20px 25px;}
+    .footer-inner{flex-direction:column;gap:25px;}
+    .footer-brand p{max-width:100%;}
+    .footer-bottom{font-size:11px;}
+  }
+
+  /* ===== SMALL PHONE (max 380px) ===== */
+  @media(max-width:380px){
+    .hero h1{font-size:34px;}
+    .hero-sub{font-size:14px;}
+    .btn-primary{font-size:15px;padding:14px 16px;}
+    .btn-secondary{font-size:13px;padding:12px 16px;}
+    .proof-stat .num{font-size:17px;}
+    .proof-stat .label{font-size:8px;}
+    .price-card .price{font-size:44px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce">
+  <span>&#9733;</span> MADE IN AMERICA &bull; FREE SHIPPING ON 3+ &bull; <span>SELLING FAST &mdash; LIMITED STOCK</span>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">LIBERTY<span>ROUNDS</span></a>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#product">How It Works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="#pricing" class="nav-cta">Shop Now</a>
+  </div>
+</nav>
+
+<!-- STICKY BUY BAR (appears on scroll) -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sticky-bar-text"><strong>LibertyRounds</strong> &mdash; 10 rounds, silent carry, from $24.99</div>
+  <a href="#pricing" class="sticky-bar-btn">Order Now</a>
+</div>
+
+<!-- =============== HERO — FULL BLEED =============== -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge">&#9733; Made In America &bull; Ships Tomorrow</div>
+    <h1>
+      Your Backup Ammo<br>
+      Should Be <span class="red">As Ready</span><br>
+      <span class="gold">As You Are.</span>
+    </h1>
+    <p class="hero-sub">
+      <strong>10 rounds of 9mm or .45 ACP.</strong> Magnetic seal. Dead silent. Fits in your pocket. The ammo carrier for Americans who refuse to be caught half-prepared.
+    </p>
+    <div class="hero-ctas">
+      <a href="#pricing" class="btn-primary">&#9654; Get Yours &mdash; From $24.99</a>
+      <a href="#product" class="btn-secondary">See How It Works</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item">&#9733; <strong>4.9/5</strong> (200+ reviews)</div>
+      <div class="trust-item">&#127482;&#127480; <strong>100% American Made</strong></div>
+      <div class="trust-item">&#128230; <strong>Next-Day Shipping</strong></div>
+    </div>
+    <div class="hero-urgency">&#9888; Limited batch &mdash; only a few hundred units per run</div>
+  </div>
+  <div class="hero-scroll">Scroll<br></div>
+</section>
+
+<!-- =============== SOCIAL PROOF STATS =============== -->
+<div class="proof-bar">
+  <div class="proof-stat"><div class="num">2,400<span>+</span></div><div class="label">Units Sold</div></div>
+  <div class="proof-stat"><div class="num">4.9<span>/5</span></div><div class="label">Avg Rating</div></div>
+  <div class="proof-stat"><div class="num">10</div><div class="label">Rounds Per Carrier</div></div>
+  <div class="proof-stat"><div class="num">100<span>%</span></div><div class="label">American Made</div></div>
+</div>
+
+<!-- =============== PAIN POINT BANNER =============== -->
+<div class="pain-banner">
+  <div class="pain-inner">
+    <h2>Loose rounds rattling in your pocket. <strong>Scattered across your truck console.</strong> Rolling around the bottom of your range bag.</h2>
+    <p>You'd never carry a gun without a holster. So why are you carrying your backup ammo like an afterthought? <strong>There's a better way.</strong></p>
+  </div>
+</div>
+
+<!-- MOBILE-ONLY EARLY CTA -->
+<div class="mobile-cta">
+  <a href="#pricing">&#9654; Get Yours &mdash; From $24.99</a>
+  <p>&#9733; 4.9/5 &bull; Free shipping on 3+ &bull; Made in USA</p>
+</div>
+
+<!-- =============== LIFESTYLE 1: POCKET CARRY =============== -->
+<section class="life-section" id="product">
+  <div class="life-row">
+    <div class="life-img" style="background-image:url('images/pocket-carry.jpg');"></div>
+    <div class="life-text">
+      <div class="life-label">The Problem, Solved</div>
+      <h3>10 Rounds. <span class="red">One Pocket.</span> <span class="gold">Zero Noise.</span></h3>
+      <p>The LibertyRounds carrier is about the size of a C-battery. It holds <strong>10 rounds of 9mm or .45 ACP</strong> in two stacked rings of 5. Drop it in your pocket and forget it's there &mdash; until you need it.</p>
+      <p>Nobody around you will have any idea you're carrying a reload. <strong>It looks like nothing. It sounds like nothing. But when you need it &mdash; it's everything.</strong></p>
+      <ul class="life-check">
+        <li>Fits any pocket, bag, console, or nightstand</li>
+        <li>Completely silent &mdash; zero rattle, zero movement</li>
+        <li>Discreet &mdash; doesn't scream "ammo"</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =============== LIFESTYLE 2: WORKBENCH =============== -->
+<section class="life-section">
+  <div class="life-row reverse">
+    <div class="life-img" style="background-image:url('images/workbench.jpg');"></div>
+    <div class="life-text">
+      <div class="life-label">Engineered For Real Life</div>
+      <h3>Magnetic Cap. <span class="red">Snap On.</span> <span class="gold">Snap Off.</span></h3>
+      <p>The rare-earth neodymium magnet in the cap holds your rounds locked in place through <strong>anything</strong> &mdash; running, bouncing around in your truck, getting tossed in your range bag.</p>
+      <p><strong>It stays shut until YOU open it.</strong> One thumb push and the cap pops clean. Your 10 rounds are right there.</p>
+      <ul class="life-check">
+        <li>Rare-earth neodymium magnetic seal</li>
+        <li>One-handed, one-thumb cap removal</li>
+        <li>Survives drops, impacts, and daily abuse</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =============== EDC SECTION =============== -->
+<section class="edc-section">
+  <div class="edc-bg"></div>
+  <div class="edc-content">
+    <div class="section-label">Complete Your Carry</div>
+    <h2>Wallet. Keys. Knife. <span class="gold">LibertyRounds.</span></h2>
+    <p>You've got your blade, your light, your wallet. But if you're carrying a firearm, <strong>why isn't your backup ammo part of the kit?</strong></p>
+    <p>LibertyRounds fits right in with your EDC. Same size as what's already in your pockets. <strong>10 extra rounds. Zero extra hassle.</strong></p>
+    <div class="edc-items">
+      <div class="edc-item"><span>&#10003;</span> Pocketable</div>
+      <div class="edc-item"><span>&#10003;</span> Dead Silent</div>
+      <div class="edc-item"><span>&#10003;</span> 10 Rounds</div>
+      <div class="edc-item"><span>&#10003;</span> American Made</div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== LIFESTYLE 3: RANGE =============== -->
+<section class="life-section">
+  <div class="life-row">
+    <div class="life-img" style="background-image:url('images/range-table.jpg');"></div>
+    <div class="life-text">
+      <div class="life-label">Range Day Ready</div>
+      <h3>Be The Guy <span class="gold">Everyone Asks About</span></h3>
+      <p>You know that moment when you pull something out and everyone at the lane stops to ask <strong>"what is that?"</strong> That's LibertyRounds.</p>
+      <p>Keep your ammo organized. Keep your station clean. <strong>No more loose rounds rolling around the bench.</strong></p>
+      <ul class="life-check">
+        <li>Quick reload between strings of fire</li>
+        <li>No more chasing rounds on the bench</li>
+        <li>Conversation starter &mdash; guaranteed</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =============== LIFESTYLE 4: TRUCK =============== -->
+<section class="life-section">
+  <div class="life-row reverse">
+    <div class="life-img" style="background-image:url('images/truck-tailgate.jpg');"></div>
+    <div class="life-text">
+      <div class="life-label">From Tailgate To Trailhead</div>
+      <h3>Your Truck. Your Land. <span class="red">Your Rules.</span></h3>
+      <p>Whether you're on your property, headed to camp, or running into town &mdash; <strong>you should never be more than an arm's reach from a reload.</strong></p>
+      <p>Console. Door pocket. Glove box. Takes up less space than a lighter. Holds 10 rounds that are actually organized and ready.</p>
+      <ul class="life-check">
+        <li>Fits anywhere in your vehicle</li>
+        <li>Won't rattle like loose rounds</li>
+        <li>Keeps ammo dry, organized, and contained</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- MOBILE-ONLY MID-PAGE CTA -->
+<div class="mobile-cta">
+  <a href="#pricing">&#9654; Order Now &mdash; Limited Stock</a>
+  <p>&#128230; Ships next day &bull; 100% Satisfaction Guaranteed</p>
+</div>
+
+<!-- =============== PRODUCT DETAIL (transparent PNGs) =============== -->
+<section class="product-show">
+  <div class="section-header">
+    <div class="section-label">Inside The Carrier</div>
+    <h2 class="section-title">See What You're <span class="gold">Carrying</span></h2>
+  </div>
+  <div class="product-show-row">
+    <div class="product-show-img">
+      <img src="images/product-open-loaded.png" alt="LibertyRounds open showing loaded rounds and magnetic cap">
+    </div>
+    <div class="product-show-text">
+      <h3>Load It. <span style="color:var(--gold)">Cap It. Go.</span></h3>
+      <p>Drop 10 rounds in &mdash; two rings of 5 that stack perfectly. Snap the magnetic cap on and you're done. <strong>The whole process takes under 5 seconds.</strong></p>
+      <p>The side window lets you visually confirm you're loaded without ever opening it. Quick glance, total confidence.</p>
+    </div>
+  </div>
+  <div class="product-show-row reverse">
+    <div class="product-show-img">
+      <img src="images/product-components.png" alt="LibertyRounds all components">
+    </div>
+    <div class="product-show-text">
+      <h3>Two Calibers. <span style="color:var(--red-bright)">One Mission.</span></h3>
+      <p>Available in <strong>9mm Luger</strong> and <strong>.45 ACP</strong>. Each carrier is precision-engineered for its specific caliber &mdash; perfect fit, zero rattle.</p>
+      <p>Whether you carry a compact 9 or a full-size .45, LibertyRounds has you covered.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== FEATURES GRID =============== -->
+<section class="features" id="features">
+  <div class="section-header">
+    <div class="section-label">What Sets Us Apart</div>
+    <h2 class="section-title">Built By Americans. <span class="gold">For Americans.</span></h2>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">&#129522;</div>
+      <h3>Magnetic Seal</h3>
+      <p>Rare-earth neodymium magnet keeps it locked. One thumb pop to open. No snaps, zippers, or velcro.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#128064;</div>
+      <h3>Side Window</h3>
+      <p>Visual confirmation without opening it. See your rounds. Know you're loaded. No guessing.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#127919;</div>
+      <h3>10-Round Capacity</h3>
+      <p>Two stacked rings of 5. Nearly a full mag of backup in something the size of a C-battery.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#129520;</div>
+      <h3>Dead Silent</h3>
+      <p>Zero rattle. Zero movement. True silent carry. The person next to you won't know it's there.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#128736;</div>
+      <h3>3D-Printed Tough</h3>
+      <p>Precision-printed from high-strength polymer. Light, durable, built to take the same abuse you do.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#127482;&#127480;</div>
+      <h3>Made in America</h3>
+      <p>Designed, printed, and shipped from the USA. Your money stays here. No overseas compromises.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== GALLERY =============== -->
+<div class="gallery">
+  <div class="gallery-strip">
+    <img src="images/ammo-can.jpg" alt="On ammo can">
+    <img src="images/in-hand.jpg" alt="In hand at range">
+    <img src="images/rustic-leather.jpg" alt="On leather bag">
+    <img src="images/concrete.jpg" alt="Industrial shot">
+  </div>
+</div>
+
+<!-- =============== FULL WIDTH BANNER =============== -->
+<div class="full-banner">
+  <div class="bg" style="background-image:url('images/outdoor-fence.jpg');"></div>
+  <div class="full-banner-content">
+    <h2>You Carry A Gun Because <span style="color:var(--red-bright)">You Refuse To Be A Victim.</span></h2>
+    <p>Shouldn't your backup ammo be just as ready as you are? Stop carrying loose rounds like an afterthought. Carry them like you mean it.</p>
+    <a href="#pricing" class="btn-primary">&#9654; Order Now</a>
+  </div>
+</div>
+
+<!-- =============== COMPARISON TABLE =============== -->
+<section class="comparison" id="compare">
+  <div class="section-header">
+    <div class="section-label">No Contest</div>
+    <h2 class="section-title">LibertyRounds vs <span class="gold">Everything Else</span></h2>
+  </div>
+  <table class="comp-table">
+    <thead><tr><th>Feature</th><th>LibertyRounds</th><th>Traditional Holders</th></tr></thead>
+    <tbody>
+      <tr><td>Capacity</td><td><span class="comp-check">&#10003; 10 rounds</span></td><td><span class="comp-x">&#10007; 5-6 typical</span></td></tr>
+      <tr><td>Silent carry</td><td><span class="comp-check">&#10003; Dead silent</span></td><td><span class="comp-x">&#10007; Rounds rattle</span></td></tr>
+      <tr><td>Pocketable</td><td><span class="comp-check">&#10003; Fits any pocket</span></td><td><span class="comp-x">&#10007; Bulky & awkward</span></td></tr>
+      <tr><td>Access speed</td><td><span class="comp-check">&#10003; Magnetic instant-open</span></td><td><span class="comp-x">&#10007; Snaps / zippers</span></td></tr>
+      <tr><td>Visual check</td><td><span class="comp-check">&#10003; Side window</span></td><td><span class="comp-x">&#10007; Must open</span></td></tr>
+      <tr><td>Discreet</td><td><span class="comp-check">&#10003; Looks like a tube</span></td><td><span class="comp-x">&#10007; Screams "ammo"</span></td></tr>
+      <tr><td>Made in USA</td><td><span class="comp-check">&#10003; 100% American</span></td><td><span class="comp-x">&#10007; Often imported</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- =============== PRICING =============== -->
+<section class="pricing" id="pricing">
+  <div class="section-header">
+    <div class="section-label">Grab Yours Before They're Gone</div>
+    <h2 class="section-title">Choose Your <span class="gold">Caliber</span></h2>
+  </div>
+  <div class="pricing-cards">
+    <div class="price-card popular">
+      <div class="popular-badge">Most Popular</div>
+      <h3>9mm Carrier</h3>
+      <p class="caliber">10 rounds of 9mm Luger &bull; Two rings of 5</p>
+      <div class="price"><sup>$</sup>24<sup>.99</sup></div>
+      <p class="price-note">Free shipping on orders of 3+</p>
+      <ul>
+        <li>10-round capacity (two rings of 5)</li>
+        <li>Neodymium magnetic cap</li>
+        <li>Quick-access side window</li>
+        <li>3D-printed tough polymer</li>
+        <li>100% Made in USA</li>
+        <li>Satisfaction guaranteed</li>
+      </ul>
+      <a href="#" class="price-btn">Add to Cart &mdash; 9mm</a>
+      <div class="price-urgency">&#9888; Limited stock &mdash; order today</div>
+    </div>
+    <div class="price-card">
+      <h3>.45 ACP Carrier</h3>
+      <p class="caliber">10 rounds of .45 ACP &bull; Two rings of 5</p>
+      <div class="price"><sup>$</sup>29<sup>.99</sup></div>
+      <p class="price-note">Free shipping on orders of 3+</p>
+      <ul>
+        <li>10-round capacity (two rings of 5)</li>
+        <li>Neodymium magnetic cap</li>
+        <li>Quick-access side window</li>
+        <li>3D-printed tough polymer</li>
+        <li>100% Made in USA</li>
+        <li>Satisfaction guaranteed</li>
+      </ul>
+      <a href="#" class="price-btn">Add to Cart &mdash; .45 ACP</a>
+      <div class="price-urgency">&#9888; Limited stock &mdash; order today</div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== TESTIMONIALS =============== -->
+<section class="testimonials">
+  <div class="section-header">
+    <div class="section-label">Don't Take Our Word For It</div>
+    <h2 class="section-title">Hear It From <span class="gold">Fellow Gun Owners</span></h2>
+  </div>
+  <div class="test-grid">
+    <div class="test-card">
+      <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>"I EDC a Glock 19 and always had loose rounds floating around my truck. Now I keep two of these &mdash; one in my console, one in my jacket. Dead silent. 10 rounds ready at all times. Genius product."</p>
+      <div class="test-author">Mike R.</div>
+      <div class="test-verified">&#10003; Verified Buyer &bull; Texas</div>
+    </div>
+    <div class="test-card">
+      <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>"Brought it to the range and THREE guys asked where I got it. The magnet is strong as hell and the whole thing just works. Already bought two more. Stop thinking about it and just order."</p>
+      <div class="test-author">Travis W.</div>
+      <div class="test-verified">&#10003; Verified Buyer &bull; Florida</div>
+    </div>
+    <div class="test-card">
+      <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>"Got 4 &mdash; two 9mm, two .45. Nightstand, range bag, truck, pocket. My wife got me two more for my birthday. American made, solid build, fair price. What more do you want?"</p>
+      <div class="test-author">Dan P.</div>
+      <div class="test-verified">&#10003; Verified Buyer &bull; Georgia</div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== FAQ =============== -->
+<section class="faq" id="faq">
+  <div class="section-header">
+    <div class="section-label">Got Questions?</div>
+    <h2 class="section-title">Frequently <span class="gold">Asked</span></h2>
+  </div>
+  <div class="faq-item open">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How strong is the magnetic cap?</div>
+    <div class="faq-a">Strong. Rare-earth neodymium. Holds firm through daily carry, drops, bumps, and bouncing around in your truck. Won't pop open by accident &mdash; but one thumb push and it's off.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Will my rounds fall out or rattle?</div>
+    <div class="faq-a">No. Two stacked rings of 5 keep them snug. Magnetic cap seals the top. Shake it, drop it, run with it &mdash; dead silent, nothing moves.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What ammo brands work with it?</div>
+    <div class="faq-a">All of them. Federal, Winchester, Hornady, Speer, Remington, Sig &mdash; any standard 9mm Luger or .45 ACP round.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How fast can I access my rounds?</div>
+    <div class="faq-a">Pull it out, pop the cap with your thumb, dump. The side window also lets you thumb rounds out individually. Pocket to loaded in seconds.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is it legal to carry?</div>
+    <div class="faq-a">It's an ammo storage container &mdash; no different than a speed loader or ammo box. Always check your local and state laws regarding ammunition carry.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How fast do you ship?</div>
+    <div class="faq-a">Orders before 2pm EST ship same day. Most domestic orders arrive in 2-4 business days. Free shipping on 3+.</div>
+  </div>
+</section>
+
+<!-- =============== FINAL CTA =============== -->
+<section class="final-cta">
+  <div class="bg"></div>
+  <div class="final-cta-content">
+    <h2>You're Either <span style="color:var(--red-bright)">Prepared</span> Or You're <span style="color:var(--gold)">Not.</span></h2>
+    <p>Don't be the guy with an empty mag and no backup plan. 10 rounds, always on you, always ready. That's the LibertyRounds promise.</p>
+    <a href="#pricing" class="btn-primary" style="font-size:19px;padding:18px 50px;">&#9733; Order LibertyRounds Now</a>
+    <p style="color:#555;font-size:13px;margin-top:20px;">Free shipping on 3+ &bull; Made in America &bull; 100% Satisfaction Guarantee</p>
+  </div>
+</section>
+
+<!-- =============== FOOTER =============== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#" class="logo">LIBERTY<span>ROUNDS</span></a>
+      <p>American-made magnetic ammo carriers for those who carry. Designed, printed, and shipped from the USA.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Shop</h4>
+      <a href="#">9mm Carrier</a>
+      <a href="#">.45 ACP Carrier</a>
+      <a href="#">Bundle Packs</a>
+    </div>
+    <div class="footer-links">
+      <h4>Support</h4>
+      <a href="#">Shipping Info</a>
+      <a href="#">Returns</a>
+      <a href="#">Contact Us</a>
+    </div>
+    <div class="footer-links">
+      <h4>Legal</h4>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 LibertyRounds. All rights reserved. Proudly made in the United States of America.
+  </div>
+</footer>
+
+<!-- STICKY BAR SCRIPT -->
+<script>
+  const stickyBar = document.getElementById('stickyBar');
+  const pricingSection = document.getElementById('pricing');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const pricingTop = pricingSection.offsetTop;
+    const pricingBottom = pricingTop + pricingSection.offsetHeight;
+    if (scrollY > 600 && (scrollY < pricingTop - 200 || scrollY > pricingBottom + 100)) {
+      stickyBar.classList.add('visible');
+    } else {
+      stickyBar.classList.remove('visible');
+    }
+  });
+</script>
+
+</body>
+</html>
