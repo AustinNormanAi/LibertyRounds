@@ -1,0 +1,2120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Free: Your Gut-Thyroid Connection Score | IBD Assist</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --primary: #000019;
+  --cyan-100: #e0f7fb;
+  --cyan-200: #b2ebf2;
+  --cyan-300: #80deea;
+  --cyan-400: #09C9E9;
+  --cyan-500: #00b8d4;
+  --cyan-600: #0097a7;
+  --purple-400: #7874F8;
+  --purple-500: #6366f1;
+  --teal-400: #43B9B2;
+  --white: #ffffff;
+  --gray-50: #f8f9fa;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --gradient-primary: linear-gradient(135deg, #09C9E9, #7874F8);
+  --font-primary: 'DM Sans', -apple-system, sans-serif;
+  --font-display: 'Plus Jakarta Sans', -apple-system, sans-serif;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-primary); line-height: 1.7; color: var(--gray-800); background: var(--white); overflow-x: hidden; -webkit-text-size-adjust: 100%; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--cyan-500); text-decoration: none; }
+
+/* ===== PHASE SYSTEM ===== */
+.phase { display: none; }
+.phase.active { display: block; }
+
+/* ===== HEADER (quiz/results phases) ===== */
+/* Force full-width and centered even inside Shopify wrappers */
+[data-ibdheader] {
+  background: #000019 !important;
+  padding: 16px 16px 14px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100vw !important;
+  position: relative !important;
+  left: 50% !important;
+  right: 50% !important;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+  box-sizing: border-box !important;
+  text-align: center !important;
+  float: none !important;
+  border-bottom: 2px solid transparent !important;
+  background-image: linear-gradient(#000019, #000019), linear-gradient(90deg, #09C9E9, #7874F8) !important;
+  background-origin: border-box !important;
+  background-clip: padding-box, border-box !important;
+}
+[data-ibdheader] span {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.3px !important;
+  color: #ffffff !important;
+  text-transform: none !important;
+}
+
+/* ===========================
+   LANDING PAGE STYLES
+   =========================== */
+
+/* Social Proof Bar */
+.social-bar {
+  background: white; padding: 16px 20px;
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+  gap: 12px; border-bottom: 1px solid var(--gray-100);
+}
+.social-bar-item { font-size: 13px; color: var(--gray-600); }
+.social-bar-item strong { color: var(--gray-900); }
+
+/* Hero */
+.hero {
+  background: linear-gradient(180deg, var(--primary) 0%, #0a0a2e 60%, #121240 100%);
+  color: white; text-align: center; padding: 48px 20px 64px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(circle at 30% 70%, rgba(9,201,233,0.12) 0%, transparent 50%),
+              radial-gradient(circle at 70% 30%, rgba(120,116,248,0.12) 0%, transparent 50%);
+  animation: slowPulse 12s ease-in-out infinite;
+}
+@keyframes slowPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+.hero-content { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(16,185,129,0.2); border: 1px solid rgba(16,185,129,0.3);
+  color: #6ee7b7; padding: 8px 18px; border-radius: 25px;
+  font-size: 13px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 1px; margin-bottom: 28px;
+}
+.hero-icon { font-size: 64px; margin-bottom: 20px; display: block; }
+.hero-title {
+  font-family: var(--font-display); font-size: 34px; font-weight: 700;
+  line-height: 1.15; margin-bottom: 18px;
+}
+.hero-highlight { color: var(--cyan-400); }
+.hero-subtitle { font-size: 18px; color: rgba(255,255,255,0.8); margin-bottom: 36px; line-height: 1.6; }
+.cta-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--gradient-primary); color: white;
+  padding: 20px 44px; border-radius: 30px; font-size: 18px; font-weight: 700;
+  text-decoration: none; border: none; cursor: pointer;
+  box-shadow: 0 10px 40px rgba(9,201,233,0.35); transition: transform 0.2s;
+  font-family: var(--font-primary);
+}
+.cta-btn:active { transform: scale(0.97); }
+.hero-trust {
+  margin-top: 24px; display: flex; flex-direction: column;
+  align-items: center; gap: 6px; font-size: 13px; color: rgba(255,255,255,0.5);
+}
+.hero-stats { display: flex; justify-content: center; gap: 32px; margin-top: 40px; flex-wrap: wrap; }
+.hero-stat { text-align: center; }
+.hero-stat-value { font-size: 40px; font-weight: 800; color: var(--cyan-400); line-height: 1; }
+.hero-stat-label { font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 6px; }
+
+/* Container & Sections */
+.container { max-width: 700px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 56px 20px; }
+.section-dark { background: linear-gradient(135deg, var(--primary) 0%, #0a0a2e 100%); color: white; }
+.section-light { background: var(--gray-50); }
+.section-title {
+  font-family: var(--font-display); font-size: 28px; font-weight: 700;
+  color: var(--gray-900); margin-bottom: 12px; text-align: center; line-height: 1.25;
+}
+.section-dark .section-title { color: white; }
+.section-subtitle {
+  font-size: 16px; color: var(--gray-600); text-align: center;
+  max-width: 500px; margin: 0 auto 36px;
+}
+.section-dark .section-subtitle { color: rgba(255,255,255,0.7); }
+.highlight { color: var(--cyan-500); }
+.section-dark .highlight { color: var(--cyan-400); }
+.section-eyebrow {
+  display: inline-block; background: var(--gradient-primary); color: white;
+  padding: 6px 14px; border-radius: 20px; font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;
+}
+
+/* Pain Points */
+.pain-list { display: flex; flex-direction: column; gap: 14px; max-width: 560px; margin: 0 auto; }
+.pain-item {
+  display: flex; align-items: flex-start; gap: 14px;
+  background: white; padding: 20px; border-radius: 14px;
+  border-left: 4px solid var(--error); box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.pain-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+.pain-text { font-size: 15px; color: var(--gray-700); }
+.pain-text strong { color: var(--gray-900); }
+
+/* Discover Grid */
+.discover-grid { display: grid; grid-template-columns: 1fr; gap: 16px; max-width: 560px; margin: 0 auto; }
+.discover-card {
+  background: white; border-radius: 16px; padding: 24px 20px;
+  border: 1px solid var(--gray-200); text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+.discover-icon { font-size: 40px; margin-bottom: 12px; }
+.discover-card h4 { font-size: 16px; font-weight: 700; color: var(--gray-900); margin-bottom: 8px; }
+.discover-card p { font-size: 14px; color: var(--gray-600); margin: 0; line-height: 1.5; }
+
+/* Preview Mockup */
+.preview-section { padding: 56px 20px; text-align: center; }
+.preview-wrapper { max-width: 500px; margin: 0 auto; }
+.preview-phone {
+  background: var(--gray-900); border-radius: 32px; padding: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+.preview-phone-screen { background: white; border-radius: 24px; overflow: hidden; }
+.preview-phone-header {
+  background: linear-gradient(135deg, var(--primary) 0%, #0a0a2e 100%);
+  padding: 20px 16px; text-align: center;
+}
+.preview-phone-badge {
+  display: inline-block; background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2); color: var(--cyan-400);
+  padding: 4px 10px; border-radius: 12px; font-size: 9px;
+  font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+.preview-phone-title {
+  font-family: var(--font-display); font-size: 16px; color: white;
+  font-weight: 700; margin-bottom: 6px;
+}
+.preview-phone-sub { font-size: 11px; color: rgba(255,255,255,0.6); }
+.preview-phone-body { padding: 20px 16px; }
+.preview-progress { height: 6px; background: var(--gray-100); border-radius: 10px; overflow: hidden; margin-bottom: 20px; }
+.preview-progress-fill { height: 100%; width: 42%; background: var(--gradient-primary); border-radius: 10px; }
+.preview-q-badge {
+  display: inline-block; background: var(--cyan-100); color: var(--cyan-600);
+  padding: 4px 10px; border-radius: 12px; font-size: 10px;
+  font-weight: 700; margin-bottom: 10px;
+}
+.preview-q-text {
+  font-family: var(--font-display); font-size: 15px; font-weight: 700;
+  color: var(--gray-900); margin-bottom: 14px; text-align: left;
+}
+.preview-option {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px; border: 2px solid var(--gray-200); border-radius: 10px;
+  margin-bottom: 8px; text-align: left;
+}
+.preview-option.selected { border-color: var(--cyan-400); background: var(--cyan-100); }
+.preview-radio { width: 18px; height: 18px; border: 2px solid var(--gray-300); border-radius: 50%; flex-shrink: 0; }
+.preview-option.selected .preview-radio { background: var(--cyan-400); border-color: var(--cyan-400); }
+.preview-option-text { font-size: 12px; color: var(--gray-700); }
+.preview-option-text strong { display: block; color: var(--gray-900); font-size: 13px; }
+
+/* Results Preview */
+.results-preview-section { padding: 56px 20px; background: linear-gradient(135deg, rgba(9,201,233,0.05), rgba(120,116,248,0.05)); }
+.results-mock {
+  background: white; border-radius: 20px; padding: 28px 24px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08); border: 1px solid var(--gray-200);
+  max-width: 560px; margin: 0 auto;
+}
+.results-mock-header { text-align: center; margin-bottom: 24px; }
+.results-mock-score {
+  width: 120px; height: 120px; border-radius: 50%;
+  background: var(--gradient-primary); display: flex; flex-direction: column;
+  align-items: center; justify-content: center; color: white;
+  margin: 0 auto 12px; box-shadow: 0 8px 24px rgba(9,201,233,0.3);
+}
+.results-mock-number { font-size: 42px; font-weight: 800; line-height: 1; }
+.results-mock-label { font-size: 10px; opacity: 0.8; }
+.results-mock-severity {
+  display: inline-block; background: rgba(245,158,11,0.15);
+  color: #d97706; padding: 5px 14px; border-radius: 20px;
+  font-size: 12px; font-weight: 700;
+}
+.results-mock-bars { margin-top: 20px; }
+.results-mock-bar-item { margin-bottom: 14px; }
+.results-mock-bar-label {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; font-weight: 600; margin-bottom: 6px;
+}
+.results-mock-bar-track { height: 8px; background: var(--gray-100); border-radius: 10px; overflow: hidden; }
+.results-mock-bar-fill { height: 100%; border-radius: 10px; }
+
+/* Steps */
+.steps-list { display: flex; flex-direction: column; gap: 20px; max-width: 500px; margin: 0 auto; }
+.step-item { display: flex; gap: 16px; align-items: flex-start; }
+.step-number {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--gradient-primary); display: flex;
+  align-items: center; justify-content: center;
+  color: white; font-weight: 700; font-size: 18px; flex-shrink: 0;
+}
+.step-content { flex: 1; padding-top: 4px; }
+.step-content h4 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+.section-dark .step-content h4 { color: white; }
+.step-content p { font-size: 14px; color: var(--gray-600); margin: 0; }
+.section-dark .step-content p { color: rgba(255,255,255,0.7); }
+
+/* Testimonials */
+.testimonial-stack { display: flex; flex-direction: column; gap: 16px; max-width: 560px; margin: 0 auto; }
+.testimonial-card {
+  background: white; border-radius: 16px; padding: 24px 20px;
+  border: 1px solid var(--gray-200); box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.testimonial-stars { color: var(--warning); font-size: 16px; margin-bottom: 10px; }
+.testimonial-text { font-size: 15px; color: var(--gray-700); line-height: 1.7; margin-bottom: 14px; font-style: italic; }
+.testimonial-author { display: flex; align-items: center; gap: 10px; }
+.testimonial-avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--gradient-primary); display: flex;
+  align-items: center; justify-content: center;
+  color: white; font-weight: 700; font-size: 16px;
+}
+.testimonial-name { font-size: 14px; font-weight: 700; color: var(--gray-900); }
+.testimonial-meta { font-size: 12px; color: var(--gray-500); }
+
+/* Inline CTA */
+.inline-cta {
+  background: linear-gradient(135deg, var(--cyan-100), #ede9fe);
+  border: 2px solid var(--cyan-200); border-radius: 16px;
+  padding: 28px 24px; text-align: center; margin: 0 auto;
+  max-width: 560px;
+}
+.inline-cta h3 { font-family: var(--font-display); font-size: 20px; font-weight: 700; margin-bottom: 8px; color: var(--gray-900); }
+.inline-cta p { font-size: 14px; color: var(--gray-600); margin-bottom: 16px; }
+.inline-cta-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--gradient-primary); color: white;
+  padding: 16px 32px; border-radius: 25px; font-size: 15px; font-weight: 700;
+  text-decoration: none; border: none; cursor: pointer; font-family: var(--font-primary);
+}
+
+/* Final CTA */
+.final-cta {
+  background: linear-gradient(180deg, var(--primary) 0%, #0a0a2e 100%);
+  color: white; text-align: center; padding: 64px 20px 80px;
+}
+.final-cta-content { max-width: 540px; margin: 0 auto; }
+.final-cta-icon { font-size: 56px; margin-bottom: 20px; }
+.final-cta-title { font-family: var(--font-display); font-size: 30px; font-weight: 700; margin-bottom: 16px; line-height: 1.2; }
+.final-cta-subtitle { font-size: 17px; opacity: 0.8; margin-bottom: 36px; line-height: 1.6; }
+.final-cta-features { display: flex; justify-content: center; gap: 20px; margin-top: 20px; flex-wrap: wrap; font-size: 13px; opacity: 0.7; }
+.final-cta-trust { margin-top: 24px; font-size: 12px; opacity: 0.5; }
+
+/* Footer */
+.footer {
+  background: var(--gray-900); color: var(--gray-400);
+  text-align: center; padding: 32px 20px; font-size: 12px;
+}
+.footer-logo { height: 28px; margin: 0 auto 12px; opacity: 0.5; }
+.footer-links { margin-top: 12px; }
+.footer-links a { color: var(--gray-400); margin: 0 10px; }
+
+/* Sticky Mobile CTA (landing only) */
+.mobile-sticky {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: white; padding: 12px 20px;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.12); z-index: 100;
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+}
+.mobile-sticky-text { font-size: 14px; color: var(--gray-700); }
+.mobile-sticky-text strong { color: var(--success); }
+.mobile-sticky-btn {
+  background: var(--gradient-primary); color: white;
+  padding: 12px 24px; border-radius: 25px; font-size: 14px; font-weight: 700;
+  text-decoration: none; white-space: nowrap; border: none; cursor: pointer;
+  font-family: var(--font-primary);
+}
+
+/* ===========================
+   QUIZ SCREEN STYLES
+   =========================== */
+.quiz-screen { background: #f9fafb; padding: 0; }
+.quiz-progress-bar {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  padding: 14px 20px 12px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.quiz-progress-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.quiz-progress-label { font-size: 12px; font-weight: 600; color: var(--gray-500); letter-spacing: 0.2px; }
+.quiz-progress-count { font-size: 12px; font-weight: 700; color: var(--cyan-500); }
+.progress-track { height: 4px; background: var(--gray-200); border-radius: 10px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, #09C9E9, #7874F8); border-radius: 10px; transition: width 0.4s ease; width: 0%; }
+
+.quiz-body { padding: 28px 20px 100px; max-width: 560px; margin: 0 auto; }
+.question-container { display: none; }
+.question-container.active { display: block; animation: fadeIn 0.35s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+.question-category {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: linear-gradient(135deg, rgba(9,201,233,0.12), rgba(120,116,248,0.12));
+  color: var(--cyan-600);
+  padding: 5px 12px; border-radius: 20px; font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 14px;
+}
+.question-text {
+  font-family: var(--font-display); font-size: 22px; font-weight: 800;
+  color: var(--gray-900); margin-bottom: 6px; line-height: 1.3;
+}
+.question-helper { font-size: 13px; color: var(--gray-400); margin-bottom: 20px; }
+
+.options-list { display: flex; flex-direction: column; gap: 10px; }
+.option-btn {
+  display: flex; align-items: center; gap: 14px;
+  width: 100%; padding: 16px 18px; border: 1.5px solid var(--gray-200);
+  border-radius: 14px; background: #ffffff; cursor: pointer;
+  transition: all 0.2s ease; text-align: left; font-size: 14px; color: var(--gray-700);
+  font-family: var(--font-primary); line-height: 1.4; appearance: none; -webkit-appearance: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.option-btn:active { border-color: var(--cyan-400); background: rgba(9,201,233,0.06); transform: scale(0.99); }
+.option-btn.selected { border-color: var(--cyan-400); background: rgba(9,201,233,0.06); box-shadow: 0 0 0 3px rgba(9,201,233,0.12); }
+.option-radio {
+  width: 22px; height: 22px; border: 2px solid var(--gray-300);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all 0.2s;
+}
+.option-btn.selected .option-radio { background: linear-gradient(135deg, #09C9E9, #7874F8); border-color: transparent; }
+.option-btn.selected .option-radio::after { content: '\2713'; color: white; font-size: 13px; font-weight: 700; }
+.option-label { flex: 1; }
+.option-label strong { display: block; color: var(--gray-900); font-weight: 600; margin-bottom: 2px; }
+.option-label span { font-size: 13px; color: var(--gray-400); }
+
+/* Multi-select */
+.multi-select .option-radio { border-radius: 6px; }
+.multi-select .option-btn.selected .option-radio { border-radius: 6px; }
+
+/* Fixed bottom nav — only shows for multi-select or back */
+.quiz-nav {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  padding: 14px 20px;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  z-shadow: 0 -2px 16px rgba(0,0,0,0.06);
+  z-index: 50;
+}
+.quiz-nav-inner { max-width: 560px; margin: 0 auto; display: flex; gap: 10px; }
+.nav-btn {
+  flex: 1; padding: 14px; border-radius: 12px; font-size: 15px; font-weight: 700;
+  border: none; cursor: pointer; transition: all 0.15s;
+  font-family: var(--font-primary);
+}
+.nav-btn.back { background: var(--gray-100); color: var(--gray-500); flex: 0 0 auto; padding: 14px 18px; border-radius: 10px; }
+.nav-btn.next { background: linear-gradient(135deg, #09C9E9, #7874F8); color: white; border-radius: 10px; }
+.nav-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.nav-btn:active:not(:disabled) { transform: scale(0.98); }
+
+/* ===== CALCULATING SCREEN ===== */
+.calculating-screen {
+  background: linear-gradient(180deg, var(--primary) 0%, #0a0a2e 100%);
+  color: white; text-align: center;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 24px 20px; min-height: calc(100vh - 56px); min-height: calc(100dvh - 56px);
+}
+.calc-icon { font-size: 64px; margin-bottom: 24px; animation: pulse 1.5s infinite; }
+@keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+.calc-title { font-family: var(--font-display); font-size: 24px; margin-bottom: 12px; }
+.calc-subtitle { font-size: 15px; opacity: 0.7; margin-bottom: 36px; }
+.calc-steps { max-width: 320px; width: 100%; text-align: left; }
+.calc-step {
+  display: flex; align-items: center; gap: 12px; padding: 12px 0;
+  font-size: 14px; opacity: 0.4; transition: opacity 0.5s;
+}
+.calc-step.active { opacity: 1; }
+.calc-step.done { opacity: 0.7; }
+.calc-step-icon { font-size: 20px; }
+.calc-progress {
+  width: 100%; max-width: 320px; height: 4px;
+  background: rgba(255,255,255,0.1); border-radius: 10px;
+  margin-top: 24px; overflow: hidden;
+}
+.calc-progress-fill {
+  height: 100%; background: var(--gradient-primary);
+  border-radius: 10px; width: 0%; transition: width 0.5s ease;
+}
+
+/* ===== EMAIL GATE SCREEN ===== */
+.email-screen {
+  background: linear-gradient(180deg, var(--primary) 0%, #0a0a2e 60%, #121240 100%);
+  color: white; text-align: center;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 24px 20px; min-height: calc(100vh - 56px); min-height: calc(100dvh - 56px);
+  position: relative; overflow: hidden;
+}
+.email-screen::before {
+  content: ''; position: absolute; top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(circle at 30% 70%, rgba(9,201,233,0.1) 0%, transparent 50%),
+              radial-gradient(circle at 70% 30%, rgba(120,116,248,0.1) 0%, transparent 50%);
+}
+.email-content { position: relative; z-index: 1; max-width: 440px; width: 100%; }
+.email-ready-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.3);
+  padding: 6px 14px; border-radius: 25px; font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 14px;
+  color: #6ee7b7;
+}
+.email-icon { font-size: 40px; margin-bottom: 12px; display: block; }
+.email-title {
+  font-family: var(--font-display); font-size: 24px; font-weight: 700;
+  line-height: 1.2; margin-bottom: 8px;
+}
+.email-subtitle { font-size: 14px; color: rgba(255,255,255,0.75); margin-bottom: 16px; line-height: 1.5; }
+.email-form { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+.email-input {
+  width: 100%; padding: 16px 18px; border-radius: 12px;
+  border: 2px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.08);
+  color: white; font-size: 16px; font-family: var(--font-primary);
+  outline: none; transition: border-color 0.2s;
+}
+.email-input::placeholder { color: rgba(255,255,255,0.4); }
+.email-input:focus { border-color: var(--cyan-400); background: rgba(255,255,255,0.12); }
+.email-submit-btn {
+  width: 100%; padding: 18px; border-radius: 30px;
+  background: var(--gradient-primary); color: white;
+  font-size: 17px; font-weight: 700; border: none; cursor: pointer;
+  box-shadow: 0 10px 30px rgba(9,201,233,0.3); transition: transform 0.2s;
+  font-family: var(--font-primary);
+}
+.email-submit-btn:active { transform: scale(0.97); }
+.email-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.email-preview-list {
+  display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;
+  text-align: left;
+}
+.email-preview-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.8); }
+.email-preview-check { color: var(--cyan-400); font-weight: 700; flex-shrink: 0; }
+.email-trust-row {
+  display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;
+  font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 12px;
+}
+.email-error { color: #fca5a5; font-size: 13px; margin-top: -4px; display: none; }
+.email-error.show { display: block; }
+
+/* ===== RESULTS SCREEN ===== */
+.results-screen { background: var(--gray-50); padding: 0; }
+.results-hero {
+  background: linear-gradient(180deg, var(--primary) 0%, #0a0a2e 100%);
+  color: white; text-align: center; padding: 36px 24px 48px;
+  position: relative; overflow: hidden;
+}
+.results-hero::before {
+  content: ''; position: absolute; top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(circle at 30% 70%, rgba(9,201,233,0.1) 0%, transparent 50%);
+}
+.results-hero-content { position: relative; z-index: 1; }
+.results-badge {
+  display: inline-block; background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2); padding: 6px 14px;
+  border-radius: 20px; font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;
+}
+.results-title {
+  font-family: var(--font-display); font-size: 24px; font-weight: 700;
+  margin-bottom: 24px;
+}
+
+/* Score Circle */
+.score-ring { width: 180px; height: 180px; margin: 0 auto 20px; position: relative; }
+.score-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.score-ring-bg { fill: none; stroke: rgba(255,255,255,0.1); stroke-width: 8; }
+.score-ring-fill {
+  fill: none; stroke: url(#scoreGradient); stroke-width: 8;
+  stroke-linecap: round; stroke-dasharray: 502; stroke-dashoffset: 502;
+  transition: stroke-dashoffset 1.5s ease;
+}
+.score-ring-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; }
+.score-number { font-size: 56px; font-weight: 800; line-height: 1; }
+.score-label { font-size: 12px; opacity: 0.7; margin-top: 4px; }
+.score-severity { display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 14px; font-weight: 700; margin-top: 8px; }
+.score-severity.mild { background: rgba(16,185,129,0.2); color: #6ee7b7; }
+.score-severity.moderate { background: rgba(245,158,11,0.2); color: #fcd34d; }
+.score-severity.significant { background: rgba(239,68,68,0.2); color: #fca5a5; }
+
+/* Results Body */
+.results-body { padding: 0 20px 60px; max-width: 600px; margin: 0 auto; }
+
+/* Pathway Cards */
+.pathway-section { margin: -24px 0 32px; position: relative; z-index: 2; }
+.pathway-section-title {
+  font-size: 13px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 1px; color: var(--gray-500); text-align: center; margin-bottom: 16px;
+}
+.pathway-cards { display: flex; flex-direction: column; gap: 12px; }
+.pathway-card {
+  background: white; border-radius: 16px; padding: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid var(--gray-100);
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.pathway-icon { font-size: 32px; flex-shrink: 0; }
+.pathway-info { flex: 1; }
+.pathway-name { font-size: 15px; font-weight: 700; color: var(--gray-900); margin-bottom: 4px; }
+.pathway-score-bar { height: 8px; background: var(--gray-100); border-radius: 10px; overflow: hidden; margin-bottom: 6px; }
+.pathway-score-fill { height: 100%; border-radius: 10px; transition: width 1s ease; }
+.pathway-score-fill.low { background: var(--success); }
+.pathway-score-fill.medium { background: var(--warning); }
+.pathway-score-fill.high { background: var(--error); }
+.pathway-desc { font-size: 13px; color: var(--gray-600); line-height: 1.5; }
+.pathway-severity { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+.pathway-severity.low { color: var(--success); }
+.pathway-severity.medium { color: var(--warning); }
+.pathway-severity.high { color: var(--error); }
+
+/* Insight Boxes */
+.insight-box {
+  background: white; border-radius: 16px; padding: 24px 20px;
+  margin-bottom: 20px; border: 1px solid var(--gray-200);
+}
+.insight-box h3 {
+  font-family: var(--font-display); font-size: 20px; font-weight: 700;
+  margin-bottom: 14px; color: var(--gray-900);
+}
+.insight-box p { font-size: 15px; color: var(--gray-600); line-height: 1.7; margin-bottom: 12px; }
+.insight-box p:last-child { margin-bottom: 0; }
+.insight-highlight {
+  background: linear-gradient(135deg, var(--cyan-100), #ede9fe);
+  border-radius: 12px; padding: 16px; margin: 16px 0;
+  border-left: 4px solid var(--purple-400);
+}
+.insight-highlight p { margin: 0; font-size: 14px; color: var(--gray-700); }
+
+/* Recs */
+.rec-list { display: flex; flex-direction: column; gap: 10px; margin: 16px 0; }
+.rec-item { display: flex; gap: 12px; align-items: flex-start; padding: 14px; background: var(--gray-50); border-radius: 10px; }
+.rec-icon { font-size: 20px; flex-shrink: 0; }
+.rec-text { font-size: 14px; color: var(--gray-700); line-height: 1.5; }
+.rec-text strong { color: var(--gray-900); }
+
+/* CTA Section */
+.results-cta {
+  background: linear-gradient(135deg, var(--primary) 0%, #0a0a2e 100%);
+  border-radius: 20px; padding: 32px 24px; text-align: center;
+  color: white; margin: 32px 0; position: relative; overflow: hidden;
+}
+.results-cta::before {
+  content: ''; position: absolute; top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(circle at 30% 70%, rgba(9,201,233,0.15) 0%, transparent 50%);
+}
+.results-cta-content { position: relative; z-index: 1; }
+.results-cta h3 { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+.results-cta p { font-size: 15px; opacity: 0.85; margin-bottom: 24px; line-height: 1.6; }
+.results-cta-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--gradient-primary); color: white;
+  padding: 18px 36px; border-radius: 30px; font-size: 16px; font-weight: 700;
+  text-decoration: none; box-shadow: 0 10px 30px rgba(9,201,233,0.3);
+}
+.results-cta-btn:active { transform: scale(0.97); }
+.results-cta-features { display: flex; justify-content: center; gap: 16px; margin-top: 16px; flex-wrap: wrap; font-size: 12px; opacity: 0.7; }
+.results-cta-price { margin: 16px 0 8px; }
+.results-cta-price .original { text-decoration: line-through; opacity: 0.5; font-size: 16px; }
+.results-cta-price .sale { font-size: 40px; font-weight: 800; }
+.masterclass-credit {
+  background: rgba(16,185,129,0.2); border: 1px solid rgba(16,185,129,0.3);
+  border-radius: 10px; padding: 12px 16px; margin: 16px 0;
+  font-size: 13px; color: #6ee7b7;
+}
+
+/* Share Section */
+.share-section { text-align: center; padding: 24px 0; }
+.share-title { font-size: 14px; font-weight: 600; color: var(--gray-600); margin-bottom: 12px; }
+.share-btns { display: flex; justify-content: center; gap: 10px; }
+.share-btn {
+  padding: 10px 20px; border-radius: 25px; font-size: 13px; font-weight: 600;
+  border: 2px solid var(--gray-200); background: white; color: var(--gray-700); cursor: pointer;
+}
+
+/* Results Footer */
+.results-footer { text-align: center; padding: 24px 20px 40px; font-size: 11px; color: var(--gray-500); }
+
+/* ===== JOURNEY TIMELINE (Masterclass Preview) ===== */
+.journey-section {
+  margin: 32px 0;
+  background: linear-gradient(180deg, white 0%, var(--gray-50) 50%, white 100%);
+  border-radius: 20px;
+  padding: 36px 20px;
+  border: 1px solid var(--gray-100);
+}
+.journey-header { text-align: center; margin-bottom: 32px; }
+.journey-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--gradient-primary); color: white;
+  padding: 8px 16px; border-radius: 25px;
+  font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+.journey-title {
+  font-family: var(--font-display); font-size: 22px; font-weight: 700;
+  color: var(--gray-900); margin-bottom: 8px; line-height: 1.3;
+}
+.journey-subtitle { font-size: 14px; color: var(--gray-600); max-width: 400px; margin: 0 auto; }
+.journey-timeline { position: relative; padding-left: 32px; max-width: 520px; margin: 0 auto; }
+.journey-timeline::before {
+  content: ''; position: absolute; left: 11px; top: 24px; bottom: 24px;
+  width: 3px; background: linear-gradient(180deg, var(--cyan-400), var(--purple-400), var(--teal-400));
+  border-radius: 3px;
+}
+.journey-item { position: relative; padding: 12px 0 12px 24px; }
+.journey-item::before {
+  content: ''; position: absolute; left: -25px; top: 20px;
+  width: 25px; height: 25px; background: white;
+  border: 3px solid var(--cyan-400); border-radius: 50%; z-index: 2;
+}
+.journey-item:nth-child(3)::before,
+.journey-item:nth-child(4)::before { border-color: var(--purple-400); }
+.journey-item:nth-child(5)::before,
+.journey-item:nth-child(6)::before,
+.journey-item:nth-child(7)::before { border-color: var(--teal-400); }
+.journey-card {
+  background: white; border-radius: 14px; padding: 18px 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05); border: 1px solid var(--gray-100);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.journey-card:active { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+.journey-card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.journey-number {
+  width: 28px; height: 28px; background: var(--gradient-primary); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-weight: 700; font-size: 13px; flex-shrink: 0;
+}
+.journey-icon { font-size: 20px; }
+.journey-name { font-size: 15px; font-weight: 700; color: var(--gray-900); }
+.journey-desc { font-size: 13px; color: var(--gray-600); line-height: 1.5; margin-top: 4px; }
+.journey-meta { display: flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 11px; }
+.journey-time {
+  display: inline-flex; align-items: center; gap: 4px;
+  color: var(--gray-500); background: var(--gray-50);
+  padding: 3px 8px; border-radius: 10px;
+}
+.journey-tag {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: rgba(9,201,233,0.1); color: var(--cyan-600);
+  padding: 3px 8px; border-radius: 10px; font-weight: 600;
+}
+.journey-cta-wrap { text-align: center; margin-top: 28px; }
+.journey-cta-text {
+  font-size: 14px; color: var(--gray-600); margin-bottom: 14px; line-height: 1.6;
+  max-width: 440px; margin-left: auto; margin-right: auto;
+}
+.journey-cta-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--gradient-primary); color: white;
+  padding: 16px 32px; border-radius: 30px; font-size: 16px; font-weight: 700;
+  text-decoration: none; box-shadow: 0 10px 30px rgba(9,201,233,0.3);
+  transition: transform 0.2s;
+}
+.journey-cta-btn:active { transform: scale(0.97); }
+.journey-cta-features {
+  display: flex; justify-content: center; gap: 16px; margin-top: 14px;
+  flex-wrap: wrap; font-size: 12px; color: var(--gray-500);
+}
+
+/* ===== SNEAK PEEK PREVIEWS ===== */
+.peek-section {
+  margin: 24px 0; display: flex; flex-direction: column; gap: 16px;
+}
+.peek-card {
+  border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--gray-200); box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+.peek-card-header {
+  background: linear-gradient(135deg, var(--primary) 0%, #0a0a2e 100%);
+  padding: 20px 18px; text-align: center; position: relative; overflow: hidden;
+}
+.peek-card-header::before {
+  content: ''; position: absolute; top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(circle at 20% 80%, rgba(9,201,233,0.12) 0%, transparent 40%),
+              radial-gradient(circle at 80% 20%, rgba(120,116,248,0.12) 0%, transparent 40%);
+}
+.peek-card-header > * { position: relative; z-index: 1; }
+.peek-eyebrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(9,201,233,0.2); border: 1px solid rgba(9,201,233,0.3);
+  color: var(--cyan-400); padding: 4px 10px; border-radius: 14px;
+  font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+.peek-icon { font-size: 36px; display: block; margin-bottom: 8px; }
+.peek-title { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: white; margin-bottom: 4px; }
+.peek-subtitle { font-size: 12px; color: rgba(255,255,255,0.7); }
+.peek-card-body {
+  background: white; padding: 18px 16px; position: relative;
+}
+.peek-blur-overlay {
+  position: relative;
+}
+.peek-blur-overlay::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 80px; background: linear-gradient(transparent, white); pointer-events: none;
+}
+.peek-food-items { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+.peek-food-item {
+  background: var(--gray-50); border: 1px solid var(--gray-200);
+  padding: 5px 10px; border-radius: 16px; font-size: 11px; color: var(--gray-700);
+}
+.peek-food-cat { font-size: 13px; font-weight: 700; color: var(--gray-900); margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+.peek-food-group { margin-bottom: 12px; }
+.peek-food-group:last-child { margin-bottom: 0; }
+.peek-protocol-phase {
+  background: var(--gray-50); border-radius: 10px; padding: 12px 14px;
+  margin-bottom: 8px; border-left: 3px solid var(--cyan-400);
+}
+.peek-protocol-phase:nth-child(2) { border-left-color: var(--purple-400); }
+.peek-protocol-phase:nth-child(3) { border-left-color: var(--teal-400); }
+.peek-protocol-phase h4 { font-size: 13px; font-weight: 700; color: var(--gray-900); margin-bottom: 2px; }
+.peek-protocol-phase p { font-size: 11px; color: var(--gray-600); margin: 0; }
+.peek-cards-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 10px; }
+.peek-info-card {
+  background: var(--gray-50); border-radius: 8px; padding: 10px;
+  border: 1px solid var(--gray-200);
+}
+.peek-info-card .p-icon { font-size: 18px; margin-bottom: 4px; }
+.peek-info-card h4 { font-size: 11px; font-weight: 700; color: var(--gray-900); margin-bottom: 2px; }
+.peek-info-card p { font-size: 10px; color: var(--gray-600); margin: 0; }
+.peek-unlock-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--gradient-primary); color: white;
+  padding: 10px 20px; border-radius: 20px; font-size: 12px; font-weight: 700;
+  text-decoration: none; margin-top: 14px;
+  box-shadow: 0 6px 20px rgba(9,201,233,0.2);
+}
+
+/* ===== HERO PREVIEW MOCKUP ===== */
+.assess-hero-preview {
+  margin-top: 48px; perspective: 1000px;
+}
+.assess-hero-preview-container {
+  max-width: 360px; margin: 0 auto;
+  transform-style: preserve-3d;
+  animation: floatMockup 6s ease-in-out infinite;
+}
+@keyframes floatMockup {
+  0%, 100% { transform: translateY(0px) rotateX(8deg) rotateZ(-2deg); }
+  50% { transform: translateY(-20px) rotateX(8deg) rotateZ(-2deg); }
+}
+.assess-hero-preview-frame {
+  background: var(--gray-900); border-radius: 24px; padding: 10px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.4), 0 0 60px rgba(9,201,233,0.15);
+  position: relative; overflow: hidden;
+}
+.assess-hero-preview-frame::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(9,201,233,0.1), transparent);
+  pointer-events: none; z-index: 10;
+}
+.assess-hero-preview-screen {
+  background: white; border-radius: 18px; overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+.assess-hero-preview-chrome {
+  background: linear-gradient(180deg, var(--primary) 0%, #0a0a2e 100%);
+  padding: 12px 14px; display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid rgba(9,201,233,0.2);
+}
+.assess-hero-preview-dots {
+  display: flex; gap: 6px;
+}
+.assess-hero-preview-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+}
+.assess-hero-preview-title {
+  color: rgba(255,255,255,0.7); font-size: 11px; font-weight: 600;
+  text-align: center; flex: 1;
+}
+.assess-hero-preview-content {
+  padding: 16px 14px;
+}
+.assess-hero-preview-results-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 9px; font-weight: 700; color: #0097a7;
+  text-transform: uppercase; letter-spacing: 0.4px;
+  background: rgba(9,201,233,0.1); padding: 4px 10px; border-radius: 10px;
+  margin-bottom: 10px;
+}
+.assess-hero-preview-results-title {
+  font-size: 14px; font-weight: 800; color: var(--gray-900);
+  margin-bottom: 4px; line-height: 1.2;
+}
+.assess-hero-preview-results-subtitle {
+  font-size: 10px; color: var(--gray-500); margin-bottom: 14px;
+}
+.assess-hero-preview-score-ring {
+  width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 12px;
+  background: conic-gradient(#09C9E9 0% 73%, var(--gray-200) 73% 100%);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 20px rgba(9,201,233,0.25);
+  position: relative;
+}
+.assess-hero-preview-score-inner {
+  width: 72px; height: 72px; border-radius: 50%; background: white;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.assess-hero-preview-score-number {
+  font-size: 28px; font-weight: 800; line-height: 1;
+  background: var(--gradient-primary); -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; background-clip: text;
+}
+.assess-hero-preview-score-label {
+  font-size: 9px; color: var(--gray-500); font-weight: 600;
+}
+.assess-hero-preview-severity {
+  text-align: center; margin-bottom: 14px;
+}
+.assess-hero-preview-severity-tag {
+  display: inline-block; font-size: 10px; font-weight: 700;
+  color: #e65100; background: #fff3e0; padding: 3px 12px; border-radius: 12px;
+}
+.assess-hero-preview-pathways {
+  background: var(--gray-50); border-radius: 12px; padding: 10px 12px;
+  margin-bottom: 10px;
+}
+.assess-hero-preview-pathways-header {
+  font-size: 9px; font-weight: 700; color: var(--gray-500);
+  text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 8px;
+}
+.assess-hero-preview-pathway-bar {
+  margin-bottom: 8px;
+}
+.assess-hero-preview-pathway-label {
+  font-size: 10px; color: var(--gray-900); font-weight: 600;
+  margin-bottom: 3px; display: flex; justify-content: space-between;
+}
+.assess-hero-preview-pathway-track {
+  height: 6px; background: var(--gray-200); border-radius: 8px; overflow: hidden;
+}
+.assess-hero-preview-pathway-fill {
+  height: 100%; border-radius: 8px;
+}
+.assess-hero-preview-pathway-fill.path1 { width: 73%; background: linear-gradient(90deg, #09C9E9, #00b8d4); }
+.assess-hero-preview-pathway-fill.path2 { width: 58%; background: linear-gradient(90deg, #7874F8, #6366f1); }
+.assess-hero-preview-pathway-fill.path3 { width: 85%; background: linear-gradient(90deg, #43B9B2, #0097a7); }
+.assess-hero-preview-pathway-fill.path4 { width: 42%; background: linear-gradient(90deg, #E8827C, #d4625c); }
+.assess-hero-preview-recs {
+  display: flex; flex-direction: column; gap: 5px;
+}
+.assess-hero-preview-rec {
+  display: flex; align-items: center; gap: 6px;
+  background: white; border: 1px solid var(--gray-200); border-radius: 8px;
+  padding: 6px 8px; font-size: 10px; color: var(--gray-700);
+}
+.assess-hero-preview-rec-icon {
+  width: 22px; height: 22px; border-radius: 6px; display: flex;
+  align-items: center; justify-content: center; font-size: 11px; flex-shrink: 0;
+}
+.assess-hero-preview-rec-icon.cyan { background: rgba(9,201,233,0.12); }
+.assess-hero-preview-rec-icon.purple { background: rgba(120,116,248,0.12); }
+.assess-hero-preview-rec-icon.teal { background: rgba(67,185,178,0.12); }
+
+/* ===== RESPONSIVE ===== */
+@media (min-width: 768px) {
+  .hero-title { font-size: 48px; }
+  .hero-subtitle { font-size: 20px; }
+  .section-title { font-size: 36px; }
+  .discover-grid { grid-template-columns: repeat(2, 1fr); }
+  .final-cta-title { font-size: 40px; }
+  .question-text { font-size: 26px; }
+  .results-title { font-size: 30px; }
+  .pathway-cards { display: grid; grid-template-columns: repeat(2, 1fr); }
+  .mobile-sticky { display: none; }
+  .journey-title { font-size: 28px; }
+  .journey-timeline { padding-left: 40px; }
+  .journey-timeline::before { left: 14px; width: 4px; }
+  .journey-item::before { left: -30px; width: 30px; height: 30px; }
+  .journey-card { padding: 22px 20px; }
+  .journey-name { font-size: 17px; }
+  .journey-desc { font-size: 14px; }
+  .peek-section { flex-direction: row; gap: 16px; }
+  .peek-card { flex: 1; }
+  .assess-hero-preview-container { max-width: 400px; }
+}
+  </style>
+</head>
+<body>
+
+
+<!-- ===========================================================
+     PHASE 1: LANDING PAGE
+     =========================================================== -->
+<div class="phase active" id="landingPhase">
+
+  <!-- Social Proof Bar -->
+  <div class="social-bar">
+    <span class="social-bar-item">&#11088; <strong>4.9/5</strong> from 2,400+ reviews</span>
+    <span style="color: var(--gray-300);">&#8226;</span>
+    <span class="social-bar-item">&#128300; <strong>14,000+</strong> women have taken this assessment</span>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-badge">&#10024; 100% Free &mdash; No Catch</span>
+      <span class="hero-icon">&#128300;</span>
+      <h1 class="hero-title">Is Your Gut Secretly <span class="hero-highlight">Sabotaging</span> Your Thyroid?</h1>
+      <p class="hero-subtitle">Take this free 2-minute assessment to discover your personal Gut-Thyroid Connection Score &mdash; and find out which of 4 hidden pathways is driving your fatigue, brain fog, and bloating.</p>
+      <button class="cta-btn" onclick="startQuiz()">Take the Free Assessment &rarr;</button>
+      <div class="hero-trust">
+        <span>&#128274; No credit card &bull; No spam &bull; Instant results</span>
+        <span>Takes about 2 minutes</span>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-value">12</div><div class="hero-stat-label">Science-Backed Questions</div></div>
+        <div class="hero-stat"><div class="hero-stat-value">4</div><div class="hero-stat-label">Pathway Analysis</div></div>
+        <div class="hero-stat"><div class="hero-stat-value">2</div><div class="hero-stat-label">Minutes to Results</div></div>
+      </div>
+
+      <!-- Hero Preview Mockup -->
+      <div class="assess-hero-preview">
+        <div class="assess-hero-preview-container">
+          <div class="assess-hero-preview-frame">
+            <div class="assess-hero-preview-screen">
+              <!-- Chrome Bar -->
+              <div class="assess-hero-preview-chrome">
+                <div class="assess-hero-preview-dots">
+                  <div class="assess-hero-preview-dot"></div>
+                  <div class="assess-hero-preview-dot"></div>
+                  <div class="assess-hero-preview-dot"></div>
+                </div>
+                <div class="assess-hero-preview-title">Your Results</div>
+                <div style="width: 24px;"></div>
+              </div>
+              <!-- Results Screen Content -->
+              <div class="assess-hero-preview-content">
+                <!-- Badge -->
+                <div class="assess-hero-preview-results-badge">✨ Assessment Complete</div>
+                <div class="assess-hero-preview-results-title">Your Gut-Thyroid Score</div>
+                <div class="assess-hero-preview-results-subtitle">Based on 12 clinical markers</div>
+
+                <!-- Score Ring -->
+                <div style="text-align: center;">
+                  <div class="assess-hero-preview-score-ring">
+                    <div class="assess-hero-preview-score-inner">
+                      <div class="assess-hero-preview-score-number">73</div>
+                      <div class="assess-hero-preview-score-label">out of 100</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Severity Tag -->
+                <div class="assess-hero-preview-severity">
+                  <div class="assess-hero-preview-severity-tag">⚠️ Moderate Imbalance</div>
+                </div>
+
+                <!-- Pathway Breakdown -->
+                <div class="assess-hero-preview-pathways">
+                  <div class="assess-hero-preview-pathways-header">Pathway Breakdown</div>
+                  <div class="assess-hero-preview-pathway-bar">
+                    <div class="assess-hero-preview-pathway-label">
+                      <span>Microbiome Health</span>
+                      <span style="font-size: 9px; color: var(--gray-500);">85%</span>
+                    </div>
+                    <div class="assess-hero-preview-pathway-track">
+                      <div class="assess-hero-preview-pathway-fill path3"></div>
+                    </div>
+                  </div>
+                  <div class="assess-hero-preview-pathway-bar">
+                    <div class="assess-hero-preview-pathway-label">
+                      <span>Hormone Conversion</span>
+                      <span style="font-size: 9px; color: var(--gray-500);">73%</span>
+                    </div>
+                    <div class="assess-hero-preview-pathway-track">
+                      <div class="assess-hero-preview-pathway-fill path1"></div>
+                    </div>
+                  </div>
+                  <div class="assess-hero-preview-pathway-bar">
+                    <div class="assess-hero-preview-pathway-label">
+                      <span>Inflammation Level</span>
+                      <span style="font-size: 9px; color: var(--gray-500);">58%</span>
+                    </div>
+                    <div class="assess-hero-preview-pathway-track">
+                      <div class="assess-hero-preview-pathway-fill path2"></div>
+                    </div>
+                  </div>
+                  <div class="assess-hero-preview-pathway-bar">
+                    <div class="assess-hero-preview-pathway-label">
+                      <span>Nutrient Absorption</span>
+                      <span style="font-size: 9px; color: var(--gray-500);">42%</span>
+                    </div>
+                    <div class="assess-hero-preview-pathway-track">
+                      <div class="assess-hero-preview-pathway-fill path4"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Top Recommendations -->
+                <div class="assess-hero-preview-recs">
+                  <div class="assess-hero-preview-rec">
+                    <div class="assess-hero-preview-rec-icon cyan">🔬</div>
+                    <div>Prioritize gut lining repair</div>
+                  </div>
+                  <div class="assess-hero-preview-rec">
+                    <div class="assess-hero-preview-rec-icon purple">💊</div>
+                    <div>Boost selenium & zinc intake</div>
+                  </div>
+                  <div class="assess-hero-preview-rec">
+                    <div class="assess-hero-preview-rec-icon teal">🥗</div>
+                    <div>Add anti-inflammatory foods</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Does This Sound Like You -->
+  <section class="section section-light">
+    <div class="container">
+      <div style="text-align:center;"><span class="section-eyebrow">Sound Familiar?</span></div>
+      <h2 class="section-title">You're Exhausted. Bloated. Foggy.<br><span class="highlight">And Nobody Can Tell You Why.</span></h2>
+      <p class="section-subtitle">Your doctor says your labs are "normal." But you know something isn't right.</p>
+      <div class="pain-list">
+        <div class="pain-item"><span class="pain-icon">&#128564;</span><span class="pain-text"><strong>You sleep 8 hours and wake up exhausted.</strong> Coffee barely touches it. By 2pm you're running on fumes.</span></div>
+        <div class="pain-item"><span class="pain-icon">&#129504;</span><span class="pain-text"><strong>Brain fog steals your words.</strong> You walk into rooms and forget why. You lose your train of thought mid-sentence.</span></div>
+        <div class="pain-item"><span class="pain-icon">&#128168;</span><span class="pain-text"><strong>Your belly bloats after every meal.</strong> You look 6 months pregnant by dinner. Nothing you eat feels safe.</span></div>
+        <div class="pain-item"><span class="pain-icon">&#9878;&#65039;</span><span class="pain-text"><strong>Your weight won't budge.</strong> You eat clean, you exercise, and the scale doesn't care.</span></div>
+        <div class="pain-item"><span class="pain-icon">&#10052;&#65039;</span><span class="pain-text"><strong>You're always cold.</strong> Cold hands, cold feet. You grab a sweater when everyone else is comfortable.</span></div>
+      </div>
+      <div style="text-align:center;margin-top:32px;">
+        <p style="font-size:17px;color:var(--gray-900);font-weight:600;margin-bottom:6px;">If you checked off 3 or more...</p>
+        <p style="font-size:15px;color:var(--gray-600);">Your gut and thyroid may be working against each other. This free assessment will tell you exactly what's going on.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You'll Discover -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;"><span class="section-eyebrow">What You'll Get</span></div>
+      <h2 class="section-title">Your Personalized <span class="highlight">Gut-Thyroid Report</span></h2>
+      <p class="section-subtitle">In just 2 minutes, you'll receive a detailed analysis most people pay hundreds of dollars for.</p>
+      <div class="discover-grid">
+        <div class="discover-card"><div class="discover-icon">&#128202;</div><h4>Your Connection Score</h4><p>A clear 0-100 score showing how strongly your gut and thyroid are affecting each other.</p></div>
+        <div class="discover-card"><div class="discover-icon">&#129516;</div><h4>4-Pathway Breakdown</h4><p>See which of the 4 gut-thyroid pathways is most impacted &mdash; hormone conversion, absorption, inflammation, or microbiome.</p></div>
+        <div class="discover-card"><div class="discover-icon">&#128161;</div><h4>Your "Why" Explained</h4><p>Finally understand why you feel this way &mdash; and why nothing you've tried has fully worked.</p></div>
+        <div class="discover-card"><div class="discover-icon">&#127919;</div><h4>Personalized Next Steps</h4><p>Custom recommendations based on YOUR unique pattern. Not generic advice &mdash; specific to your results.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phone Mockup -->
+  <section class="preview-section" style="background:var(--gray-50);">
+    <div style="text-align:center;"><span class="section-eyebrow">&#128064; Sneak Peek</span></div>
+    <h2 class="section-title" style="margin-bottom:32px;">Beautiful. Simple. <span class="highlight">Insightful.</span></h2>
+    <div class="preview-wrapper">
+      <div class="preview-phone">
+        <div class="preview-phone-screen">
+          <div class="preview-phone-header">
+            <div class="preview-phone-badge">Free Assessment</div>
+            <div class="preview-phone-title">Gut-Thyroid Connection Score</div>
+            <div class="preview-phone-sub">12 questions &bull; 2 minutes</div>
+          </div>
+          <div class="preview-phone-body">
+            <div class="preview-progress"><div class="preview-progress-fill"></div></div>
+            <div class="preview-q-badge">&#129419; Energy &amp; Fatigue</div>
+            <div class="preview-q-text">How would you describe your energy levels most days?</div>
+            <div class="preview-option"><div class="preview-radio"></div><div class="preview-option-text"><strong>I have great energy all day</strong>Rarely feel tired or drained</div></div>
+            <div class="preview-option selected"><div class="preview-radio"></div><div class="preview-option-text"><strong>Decent, but I crash in the afternoon</strong>Need coffee or a nap to get through</div></div>
+            <div class="preview-option"><div class="preview-radio"></div><div class="preview-option-text"><strong>I wake up tired and stay tired</strong>Sleep doesn't seem to recharge me</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Preview -->
+  <section class="results-preview-section">
+    <div class="container">
+      <div style="text-align:center;"><span class="section-eyebrow">&#128202; Your Results</span></div>
+      <h2 class="section-title" style="margin-bottom:12px;">See Exactly Where Your <span class="highlight">Body Needs Help</span></h2>
+      <p class="section-subtitle">Your personalized report breaks down all 4 gut-thyroid pathways, so you know exactly what to focus on.</p>
+      <div class="results-mock">
+        <div class="results-mock-header">
+          <div class="results-mock-score"><div class="results-mock-number">67</div><div class="results-mock-label">out of 100</div></div>
+          <div class="results-mock-severity">&#128993; Moderate Connection Pattern</div>
+        </div>
+        <div class="results-mock-bars">
+          <div class="results-mock-bar-item"><div class="results-mock-bar-label"><span>&#128260; Hormone Conversion</span><span style="color:var(--error);font-weight:700;">High &mdash; 78%</span></div><div class="results-mock-bar-track"><div class="results-mock-bar-fill" style="width:78%;background:var(--error);"></div></div></div>
+          <div class="results-mock-bar-item"><div class="results-mock-bar-label"><span>&#129514; Nutrient Absorption</span><span style="color:var(--warning);font-weight:700;">Moderate &mdash; 55%</span></div><div class="results-mock-bar-track"><div class="results-mock-bar-fill" style="width:55%;background:var(--warning);"></div></div></div>
+          <div class="results-mock-bar-item"><div class="results-mock-bar-label"><span>&#128293; Inflammation</span><span style="color:var(--error);font-weight:700;">High &mdash; 72%</span></div><div class="results-mock-bar-track"><div class="results-mock-bar-fill" style="width:72%;background:var(--error);"></div></div></div>
+          <div class="results-mock-bar-item"><div class="results-mock-bar-label"><span>&#129440; Microbiome</span><span style="color:var(--warning);font-weight:700;">Moderate &mdash; 48%</span></div><div class="results-mock-bar-track"><div class="results-mock-bar-fill" style="width:48%;background:var(--warning);"></div></div></div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:28px;">
+        <button class="inline-cta-btn" onclick="startQuiz()">Get Your Personal Score &rarr;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section section-dark">
+    <div class="container">
+      <div style="text-align:center;"><span class="section-eyebrow">How It Works</span></div>
+      <h2 class="section-title" style="color:white;">Get Your Results in <span class="highlight">3 Simple Steps</span></h2>
+      <p class="section-subtitle" style="margin-bottom:40px;">No sign-up required. No credit card. Just answers.</p>
+      <div class="steps-list">
+        <div class="step-item"><div class="step-number">1</div><div class="step-content"><h4>Answer 12 Quick Questions</h4><p>About your energy, digestion, mood, and symptoms. Takes about 2 minutes.</p></div></div>
+        <div class="step-item"><div class="step-number">2</div><div class="step-content"><h4>We Analyze Your Unique Pattern</h4><p>Our algorithm maps your symptoms across the 4 gut-thyroid pathways to identify YOUR specific pattern.</p></div></div>
+        <div class="step-item"><div class="step-number">3</div><div class="step-content"><h4>Get Your Personalized Report</h4><p>Your Connection Score, pathway breakdown, what it means, and exactly what to do next &mdash; instantly.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;"><span class="section-eyebrow">Real Stories</span></div>
+      <h2 class="section-title">This Assessment Changed <span class="highlight">How They Saw Everything</span></h2>
+      <p class="section-subtitle">Here's what women just like you are saying after taking the assessment.</p>
+      <div class="testimonial-stack">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+          <p class="testimonial-text">"I've been to 4 doctors and nobody connected my bloating to my thyroid fatigue. This assessment showed me they're completely linked. Finally, it all makes sense."</p>
+          <div class="testimonial-author"><div class="testimonial-avatar">S</div><div><div class="testimonial-name">Sarah K.</div><div class="testimonial-meta">Score: 72/100 &bull; Verified</div></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+          <p class="testimonial-text">"I scored 85/100 with high inflammation and conversion issues. Knowing exactly WHAT was off gave me the direction I'd been missing for 3 years. This should cost money."</p>
+          <div class="testimonial-author"><div class="testimonial-avatar">M</div><div><div class="testimonial-name">Michelle R.</div><div class="testimonial-meta">Score: 85/100 &bull; Verified</div></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+          <p class="testimonial-text">"I took this thinking it would be basic. It wasn't. The pathway breakdown was eye-opening &mdash; my nutrient absorption pathway was through the roof. No wonder my supplements weren't working."</p>
+          <div class="testimonial-author"><div class="testimonial-avatar">J</div><div><div class="testimonial-name">Jennifer T.</div><div class="testimonial-meta">Score: 63/100 &bull; Verified</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inline CTA -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="inline-cta">
+        <h3>Ready to See Your Score?</h3>
+        <p>2 minutes. 12 questions. Personalized results you can act on today.</p>
+        <button class="inline-cta-btn" onclick="startQuiz()">Take the Free Assessment &rarr;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who It's For -->
+  <section class="section section-light">
+    <div class="container">
+      <h2 class="section-title">This Assessment Is For You If...</h2>
+      <div class="pain-list" style="margin-top:28px;">
+        <div class="pain-item" style="border-left-color:var(--success);"><span class="pain-icon">&#9989;</span><span class="pain-text">You're a woman 30+ experiencing <strong>fatigue, brain fog, bloating, or unexplained weight gain</strong></span></div>
+        <div class="pain-item" style="border-left-color:var(--success);"><span class="pain-icon">&#9989;</span><span class="pain-text">You've been told your <strong>labs are normal</strong> but you KNOW something isn't right</span></div>
+        <div class="pain-item" style="border-left-color:var(--success);"><span class="pain-icon">&#9989;</span><span class="pain-text">You've tried supplements, diet changes, or medications that <strong>didn't fully help</strong></span></div>
+        <div class="pain-item" style="border-left-color:var(--success);"><span class="pain-icon">&#9989;</span><span class="pain-text">You want to <strong>understand your body</strong> &mdash; not just treat symptoms blindly</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <div class="final-cta-content">
+      <div class="final-cta-icon">&#128300;</div>
+      <h2 class="final-cta-title">Discover Your Gut-Thyroid Connection Score</h2>
+      <p class="final-cta-subtitle">12 questions. 2 minutes. Personalized results that could change how you understand your body forever.</p>
+      <button class="cta-btn" onclick="startQuiz()">Start the Free Assessment &rarr;</button>
+      <div class="final-cta-features"><span>&#128274; 100% Free</span><span>&#9889; Instant Results</span><span>&#128241; Works on Any Device</span></div>
+      <p class="final-cta-trust">Taken by 14,000+ women &bull; No spam</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <img src="https://cdn.shopify.com/s/files/1/0515/6998/3677/files/IBDassist-Logo-Text_2.png?v=1766539434" alt="IBD Assist" class="footer-logo">
+    <p>This assessment is for educational purposes only and is not medical advice.</p>
+    <div class="footer-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a></div>
+    <p style="margin-top:8px;">&copy; 2026 IBD Assist. All rights reserved.</p>
+  </footer>
+
+  <!-- Sticky Mobile CTA -->
+  <div class="mobile-sticky" id="mobileSticky">
+    <span class="mobile-sticky-text"><strong>FREE</strong> &bull; 2 min</span>
+    <button class="mobile-sticky-btn" onclick="startQuiz()">Take Assessment &rarr;</button>
+  </div>
+
+</div>
+
+
+<!-- ===========================================================
+     PHASE 2: QUIZ (WITH STATIC QUESTIONS)
+     =========================================================== -->
+<div class="phase" id="quizPhase">
+  <div data-ibdheader>
+    <span>Gut-Thyroid Assessment</span>
+  </div>
+  <div class="quiz-screen">
+    <div class="quiz-progress-bar">
+      <div class="quiz-progress-top">
+        <span class="quiz-progress-label" id="categoryLabel">Energy &amp; Fatigue</span>
+        <span class="quiz-progress-count" id="progressCount">1 of 12</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="quizProgressFill"></div></div>
+    </div>
+    <div class="quiz-body" id="quizBody">
+      <!-- Q0: Energy -->
+      <div class="question-container active" id="q0">
+        <div class="question-category">🦋 Energy &amp; Fatigue</div>
+        <h2 class="question-text">How would you describe your energy levels most days?</h2>
+        <p class="question-helper">Think about a typical day over the past month.</p>
+        <div class="options-list" data-qid="0" data-type="single">
+          <button class="option-btn" data-qid="0" data-oid="0" data-value="0" data-conv="0" data-abs="0" data-inf="0" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>I have great energy all day</strong><span>Rarely feel tired or drained</span></div>
+          </button>
+          <button class="option-btn" data-qid="0" data-oid="1" data-value="2" data-conv="2" data-abs="1" data-inf="0" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Decent, but I crash in the afternoon</strong><span>Need coffee or a nap to get through</span></div>
+          </button>
+          <button class="option-btn" data-qid="0" data-oid="2" data-value="4" data-conv="3" data-abs="2" data-inf="1" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>I wake up tired and stay tired</strong><span>Sleep doesn't seem to recharge me</span></div>
+          </button>
+          <button class="option-btn" data-qid="0" data-oid="3" data-value="5" data-conv="4" data-abs="3" data-inf="2" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Completely exhausted — all the time</strong><span>I can barely function some days</span></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Q1: Brain Fog -->
+      <div class="question-container" id="q1">
+        <div class="question-category">🧠 Mental Clarity</div>
+        <h2 class="question-text">How often do you experience brain fog or difficulty concentrating?</h2>
+        <p class="question-helper">Forgetting words, losing your train of thought, trouble focusing.</p>
+        <div class="options-list" data-qid="1" data-type="single">
+          <button class="option-btn" data-qid="1" data-oid="0" data-value="0" data-conv="0" data-abs="0" data-inf="0" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Rarely or never</strong><span>My thinking feels sharp</span></div>
+          </button>
+          <button class="option-btn" data-qid="1" data-oid="1" data-value="2" data-conv="2" data-abs="1" data-inf="0" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>A few times a week</strong><span>Occasional fuzzy moments</span></div>
+          </button>
+          <button class="option-btn" data-qid="1" data-oid="2" data-value="4" data-conv="3" data-abs="2" data-inf="2" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Almost every day</strong><span>I struggle to concentrate regularly</span></div>
+          </button>
+          <button class="option-btn" data-qid="1" data-oid="3" data-value="5" data-conv="4" data-abs="3" data-inf="3" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Constantly — it's affecting my life</strong><span>I forget words mid-sentence</span></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Q2: Bloating -->
+      <div class="question-container" id="q2">
+        <div class="question-category">🌿 Digestive Health</div>
+        <h2 class="question-text">How often do you experience bloating after meals?</h2>
+        <p class="question-helper">That uncomfortable, swollen-belly feeling.</p>
+        <div class="options-list" data-qid="2" data-type="single">
+          <button class="option-btn" data-qid="2" data-oid="0" data-value="0" data-conv="0" data-abs="0" data-inf="0" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Rarely — my digestion feels good</strong></div>
+          </button>
+          <button class="option-btn" data-qid="2" data-oid="1" data-value="2" data-conv="0" data-abs="0" data-inf="1" data-mic="2" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Sometimes, with certain foods</strong><span>Maybe once or twice a week</span></div>
+          </button>
+          <button class="option-btn" data-qid="2" data-oid="2" data-value="4" data-conv="0" data-abs="2" data-inf="3" data-mic="3" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Most meals leave me bloated</strong><span>I look pregnant by dinner</span></div>
+          </button>
+          <button class="option-btn" data-qid="2" data-oid="3" data-value="5" data-conv="0" data-abs="3" data-inf="4" data-mic="4" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Severe bloating almost constantly</strong><span>Pain and discomfort daily</span></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Q3: Weight -->
+      <div class="question-container" id="q3">
+        <div class="question-category">⚖️ Weight &amp; Metabolism</div>
+        <h2 class="question-text">How is your weight responding to your efforts?</h2>
+        <p class="question-helper">Despite eating well and exercising.</p>
+        <div class="options-list" data-qid="3" data-type="single">
+          <button class="option-btn" data-qid="3" data-oid="0" data-value="0" data-conv="0" data-abs="0" data-inf="0" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>My weight is stable and manageable</strong></div>
+          </button>
+          <button class="option-btn" data-qid="3" data-oid="1" data-value="2" data-conv="2" data-abs="1" data-inf="0" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Slowly gaining despite effort</strong><span>The scale creeps up</span></div>
+          </button>
+          <button class="option-btn" data-qid="3" data-oid="2" data-value="4" data-conv="4" data-abs="2" data-inf="1" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Stuck — nothing moves the scale</strong><span>Diet and exercise don't seem to help</span></div>
+          </button>
+          <button class="option-btn" data-qid="3" data-oid="3" data-value="5" data-conv="5" data-abs="2" data-inf="2" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Gaining rapidly and I don't know why</strong><span>It's getting worse</span></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Q4: Cold -->
+      <div class="question-container" id="q4">
+        <div class="question-category">🌡️ Temperature</div>
+        <h2 class="question-text">Do you often feel colder than the people around you?</h2>
+        <p class="question-helper">Always reaching for a sweater, cold hands and feet.</p>
+        <div class="options-list" data-qid="4" data-type="single">
+          <button class="option-btn" data-qid="4" data-oid="0" data-value="0" data-conv="0" data-abs="0" data-inf="0" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>No, my temperature feels normal</strong></div>
+          </button>
+          <button class="option-btn" data-qid="4" data-oid="1" data-value="2" data-conv="2" data-abs="0" data-inf="0" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Sometimes — I run a little cold</strong></div>
+          </button>
+          <button class="option-btn" data-qid="4" data-oid="2" data-value="4" data-conv="4" data-abs="1" data-inf="0" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Yes — I'm always the cold one</strong><span>Cold hands, cold feet, always bundled up</span></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Q5: Hair/Skin/Nails -->
+      <div class="question-container" id="q5">
+        <div class="question-category">💇 Hair &amp; Skin</div>
+        <h2 class="question-text">Have you noticed changes in your hair, skin, or nails?</h2>
+        <p class="question-helper">Thinning hair, dry skin, brittle nails.</p>
+        <div class="options-list" data-qid="5" data-type="single">
+          <button class="option-btn" data-qid="5" data-oid="0" data-value="0" data-conv="0" data-abs="0" data-inf="0" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>No — they look and feel healthy</strong></div>
+          </button>
+          <button class="option-btn" data-qid="5" data-oid="1" data-value="2" data-conv="1" data-abs="2" data-inf="0" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Some dryness or dullness</strong><span>Skin is a bit dry, hair less shiny</span></div>
+          </button>
+          <button class="option-btn" data-qid="5" data-oid="2" data-value="4" data-conv="3" data-abs="3" data-inf="1" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Noticeable thinning or breakage</strong><span>Hair falling out, nails breaking</span></div>
+          </button>
+          <button class="option-btn" data-qid="5" data-oid="3" data-value="5" data-conv="4" data-abs="4" data-inf="2" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Significant loss — it's alarming</strong><span>I see it every day</span></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Q6: Bowels -->
+      <div class="question-container" id="q6">
+        <div class="question-category">🌿 Digestive Health</div>
+        <h2 class="question-text">How are your bowel movements?</h2>
+        <p class="question-helper">Regularity, consistency, and comfort.</p>
+        <div class="options-list" data-qid="6" data-type="single">
+          <button class="option-btn" data-qid="6" data-oid="0" data-value="0" data-conv="0" data-abs="0" data-inf="0" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Regular and comfortable</strong><span>1-2 times daily, no issues</span></div>
+          </button>
+          <button class="option-btn" data-qid="6" data-oid="1" data-value="2" data-conv="1" data-abs="0" data-inf="0" data-mic="2" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Sometimes irregular</strong><span>Occasional constipation or loose stools</span></div>
+          </button>
+          <button class="option-btn" data-qid="6" data-oid="2" data-value="4" data-conv="3" data-abs="0" data-inf="2" data-mic="3" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Frequently constipated or irregular</strong><span>It's a constant struggle</span></div>
+          </button>
+          <button class="option-btn" data-qid="6" data-oid="3" data-value="5" data-conv="0" data-abs="2" data-inf="3" data-mic="4" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Alternating between extremes</strong><span>Constipation, then loose, never normal</span></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Q7: Mood -->
+      <div class="question-container" id="q7">
+        <div class="question-category">💭 Mood &amp; Wellbeing</div>
+        <h2 class="question-text">How would you describe your mood and emotional state?</h2>
+        <p class="question-helper">Overall emotional pattern over the past few months.</p>
+        <div class="options-list" data-qid="7" data-type="single">
+          <button class="option-btn" data-qid="7" data-oid="0" data-value="0" data-conv="0" data-abs="0" data-inf="0" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Generally positive and stable</strong></div>
+          </button>
+          <button class="option-btn" data-qid="7" data-oid="1" data-value="2" data-conv="1" data-abs="0" data-inf="2" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>More irritable or anxious than usual</strong><span>Shorter temper, more worry</span></div>
+          </button>
+          <button class="option-btn" data-qid="7" data-oid="2" data-value="4" data-conv="3" data-abs="1" data-inf="3" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Mood swings and low motivation</strong><span>Up and down, hard to stay motivated</span></div>
+          </button>
+          <button class="option-btn" data-qid="7" data-oid="3" data-value="5" data-conv="4" data-abs="2" data-inf="3" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Persistent low mood or apathy</strong><span>The spark is just... gone</span></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Q8: Food Sensitivity -->
+      <div class="question-container" id="q8">
+        <div class="question-category">🍽️ Food Reactions</div>
+        <h2 class="question-text">Have you developed sensitivities to foods you used to tolerate?</h2>
+        <p class="question-helper">Foods that never bothered you now cause issues.</p>
+        <div class="options-list" data-qid="8" data-type="single">
+          <button class="option-btn" data-qid="8" data-oid="0" data-value="0" data-conv="0" data-abs="0" data-inf="0" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>No — I can eat anything</strong></div>
+          </button>
+          <button class="option-btn" data-qid="8" data-oid="1" data-value="2" data-conv="0" data-abs="0" data-inf="2" data-mic="2" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>1-2 foods seem to bother me now</strong></div>
+          </button>
+          <button class="option-btn" data-qid="8" data-oid="2" data-value="4" data-conv="0" data-abs="2" data-inf="4" data-mic="4" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Multiple foods trigger reactions</strong><span>My safe food list is shrinking</span></div>
+          </button>
+          <button class="option-btn" data-qid="8" data-oid="3" data-value="5" data-conv="0" data-abs="3" data-inf="5" data-mic="5" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>I'm afraid to eat most foods</strong><span>Almost everything bothers me</span></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Q9: Sleep -->
+      <div class="question-container" id="q9">
+        <div class="question-category">😴 Sleep Quality</div>
+        <h2 class="question-text">How well do you sleep?</h2>
+        <p class="question-helper">Falling asleep, staying asleep, waking refreshed.</p>
+        <div class="options-list" data-qid="9" data-type="single">
+          <button class="option-btn" data-qid="9" data-oid="0" data-value="0" data-conv="0" data-abs="0" data-inf="0" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>I sleep well and wake refreshed</strong></div>
+          </button>
+          <button class="option-btn" data-qid="9" data-oid="1" data-value="2" data-conv="2" data-abs="0" data-inf="1" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Decent sleep but still tired in the AM</strong></div>
+          </button>
+          <button class="option-btn" data-qid="9" data-oid="2" data-value="4" data-conv="2" data-abs="0" data-inf="3" data-mic="1" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>I toss and turn or wake frequently</strong><span>Hard to fall or stay asleep</span></div>
+          </button>
+          <button class="option-btn" data-qid="9" data-oid="3" data-value="5" data-conv="3" data-abs="0" data-inf="3" data-mic="2" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Terrible sleep — exhausted every morning</strong><span>I dread bedtime because I know I won't rest</span></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Q10: Duration -->
+      <div class="question-container" id="q10">
+        <div class="question-category">⏰ Timeline</div>
+        <h2 class="question-text">How long have you been experiencing these symptoms?</h2>
+        <div class="options-list" data-qid="10" data-type="single">
+          <button class="option-btn" data-qid="10" data-oid="0" data-value="1" data-conv="0" data-abs="0" data-inf="0" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Less than 3 months</strong><span>Relatively recent</span></div>
+          </button>
+          <button class="option-btn" data-qid="10" data-oid="1" data-value="2" data-conv="0" data-abs="0" data-inf="1" data-mic="0" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>3-12 months</strong></div>
+          </button>
+          <button class="option-btn" data-qid="10" data-oid="2" data-value="3" data-conv="0" data-abs="0" data-inf="2" data-mic="1" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>1-3 years</strong></div>
+          </button>
+          <button class="option-btn" data-qid="10" data-oid="3" data-value="4" data-conv="0" data-abs="0" data-inf="3" data-mic="2" onclick="selectOption(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>More than 3 years</strong><span>It's been a long journey</span></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Q11: What You've Tried (Multi-select) -->
+      <div class="question-container" id="q11">
+        <div class="question-category">💊 What You've Tried</div>
+        <h2 class="question-text">Which of these have you tried? (Select all that apply)</h2>
+        <p class="question-helper">This helps us understand your history.</p>
+        <div class="options-list multi-select" data-qid="11" data-type="multi">
+          <button class="option-btn" data-qid="11" data-oid="0" data-value="1" data-conv="1" data-abs="0" data-inf="0" data-mic="0" onclick="toggleMulti(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Thyroid medication</strong></div>
+          </button>
+          <button class="option-btn" data-qid="11" data-oid="1" data-value="1" data-conv="0" data-abs="0" data-inf="0" data-mic="1" onclick="toggleMulti(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Probiotics</strong></div>
+          </button>
+          <button class="option-btn" data-qid="11" data-oid="2" data-value="1" data-conv="0" data-abs="0" data-inf="1" data-mic="0" onclick="toggleMulti(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Dietary changes</strong><span>Gluten-free, AIP, etc.</span></div>
+          </button>
+          <button class="option-btn" data-qid="11" data-oid="3" data-value="1" data-conv="0" data-abs="1" data-inf="0" data-mic="0" onclick="toggleMulti(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Various supplements</strong><span>Vitamins, herbs, etc.</span></div>
+          </button>
+          <button class="option-btn" data-qid="11" data-oid="4" data-value="0" data-conv="0" data-abs="0" data-inf="0" data-mic="0" onclick="toggleMulti(this)">
+            <div class="option-radio"></div><div class="option-label"><strong>Nothing yet</strong><span>Just starting to research</span></div>
+          </button>
+        </div>
+      </div>
+
+    </div>
+    <div class="quiz-nav" id="quizNav">
+      <div class="quiz-nav-inner">
+        <button class="nav-btn back" id="backBtn" onclick="prevQuestion()" disabled>&#8592;</button>
+        <button class="nav-btn next" id="nextBtn" onclick="nextQuestion()" disabled>Continue &rarr;</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===========================================================
+     PHASE 3: CALCULATING
+     =========================================================== -->
+<div class="phase" id="calcPhase">
+  <div data-ibdheader>
+    <span>Gut-Thyroid Assessment</span>
+  </div>
+  <div class="calculating-screen">
+    <div class="calc-icon">&#129516;</div>
+    <h2 class="calc-title">Analyzing Your Results...</h2>
+    <p class="calc-subtitle">We're mapping your symptoms to the 4 gut-thyroid pathways</p>
+    <div class="calc-steps">
+      <div class="calc-step" id="calcStep1"><span class="calc-step-icon">&#128260;</span> Analyzing hormone conversion pathway...</div>
+      <div class="calc-step" id="calcStep2"><span class="calc-step-icon">&#129514;</span> Evaluating nutrient absorption...</div>
+      <div class="calc-step" id="calcStep3"><span class="calc-step-icon">&#128293;</span> Measuring inflammation indicators...</div>
+      <div class="calc-step" id="calcStep4"><span class="calc-step-icon">&#129440;</span> Assessing microbiome impact...</div>
+      <div class="calc-step" id="calcStep5"><span class="calc-step-icon">&#128202;</span> Generating your personalized report...</div>
+    </div>
+    <div class="calc-progress"><div class="calc-progress-fill" id="calcProgressFill"></div></div>
+  </div>
+</div>
+
+<!-- ===========================================================
+     PHASE 4: EMAIL GATE
+     =========================================================== -->
+<div class="phase" id="emailPhase">
+  <div data-ibdheader>
+    <span>Gut-Thyroid Assessment</span>
+  </div>
+  <div class="email-screen">
+    <div class="email-content">
+      <span class="email-ready-badge">&#10003; Analysis Complete</span>
+      <span class="email-icon">&#128202;</span>
+      <h2 class="email-title">Your Results Are Ready!</h2>
+      <p class="email-subtitle">Enter your name and email to unlock your personalized Gut-Thyroid Score, 4-pathway breakdown, and custom recommendations.</p>
+      <div class="email-preview-list">
+        <div class="email-preview-item"><span class="email-preview-check">&#10003;</span><span>Your overall Gut-Thyroid Connection Score</span></div>
+        <div class="email-preview-item"><span class="email-preview-check">&#10003;</span><span>Personalized 4-pathway analysis</span></div>
+        <div class="email-preview-item"><span class="email-preview-check">&#10003;</span><span>Custom action steps based on YOUR results</span></div>
+        <div class="email-preview-item"><span class="email-preview-check">&#10003;</span><span>Exclusive next-step recommendation</span></div>
+      </div>
+      <div class="email-form" id="emailForm">
+        <input type="email" class="email-input" id="emailInput" placeholder="Your best email address" autocomplete="email">
+        <div class="email-error" id="emailError">Please enter a valid email address.</div>
+        <button class="email-submit-btn" id="emailSubmitBtn" onclick="submitEmail()">Unlock My Results &rarr;</button>
+      </div>
+      <div class="email-trust-row">
+        <span>&#128274; No spam, ever</span>
+        <span>&#128231; Unsubscribe anytime</span>
+        <span>&#128737;&#65039; We respect your privacy</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===========================================================
+     PHASE 5: RESULTS
+     =========================================================== -->
+<div class="phase" id="resultsPhase">
+  <div data-ibdheader>
+    <span>Gut-Thyroid Assessment</span>
+  </div>
+  <div class="results-screen">
+    <div class="results-hero">
+      <div class="results-hero-content">
+        <span class="results-badge">Your Results Are Ready</span>
+        <h1 class="results-title">Your Gut-Thyroid<br>Connection Score</h1>
+        <div class="score-ring">
+          <svg viewBox="0 0 180 180">
+            <defs>
+              <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#09C9E9" />
+                <stop offset="100%" style="stop-color:#7874F8" />
+              </linearGradient>
+            </defs>
+            <circle class="score-ring-bg" cx="90" cy="90" r="80" />
+            <circle class="score-ring-fill" id="scoreRingFill" cx="90" cy="90" r="80" />
+          </svg>
+          <div class="score-ring-center">
+            <div class="score-number" id="finalScore">0</div>
+            <div class="score-label">out of 100</div>
+          </div>
+        </div>
+        <div class="score-severity" id="scoreSeverity">Calculating...</div>
+      </div>
+    </div>
+
+    <div class="results-body">
+      <div class="pathway-section">
+        <div class="pathway-section-title">Your 4-Pathway Breakdown</div>
+        <div class="pathway-cards" id="pathwayCards"></div>
+      </div>
+      <div class="insight-box" id="insightBox"></div>
+      <div class="insight-box" id="recsBox">
+        <h3>&#127919; Your Top Recommendations</h3>
+        <div class="rec-list" id="recsList"></div>
+      </div>
+      <div class="insight-box">
+        <h3>&#128161; The Critical Insight</h3>
+        <p>Your results suggest that your gut and thyroid are likely affecting each other &mdash; creating a cycle that single-system approaches can't break.</p>
+        <div class="insight-highlight">
+          <p><strong>Up to 20% of thyroid hormone conversion happens in your gut.</strong> When gut health suffers, thyroid function drops. When thyroid function drops, digestion slows. It's a two-way street &mdash; and you need to address <em>both sides</em> to break the cycle.</p>
+        </div>
+        <p>The good news? Understanding this connection is the first step. And you've already taken it.</p>
+      </div>
+
+      <!-- Masterclass CTA -->
+      <div class="results-cta">
+        <div class="results-cta-content">
+          <h3>Want the Full Protocol to Fix This?</h3>
+          <p>Now that you know your score and which pathways are affected, the next step is learning <strong>exactly what to do about it</strong>.</p>
+          <a href="https://www.ibdassist.com/pages/masterclasslp" class="results-cta-btn">See What's Inside the Masterclass &rarr;</a>
+          <div class="results-cta-features"><span>&#128274; 60-Day Guarantee</span><span>&#9889; Instant Access</span><span>&#128241; Mobile Friendly</span></div>
+        </div>
+      </div>
+
+      <!-- Journey Timeline -->
+      <div class="journey-section">
+        <div class="journey-header">
+          <span class="journey-badge">&#128506; Your 45-Minute Transformation</span>
+          <h2 class="journey-title">Your Journey to Feeling Like Yourself Again</h2>
+          <p class="journey-subtitle">7 focused modules that take you from confused and frustrated to confident and in control.</p>
+        </div>
+        <div class="journey-timeline">
+          <div class="journey-item">
+            <div class="journey-card">
+              <div class="journey-card-header"><span class="journey-number">1</span><span class="journey-icon">&#128640;</span></div>
+              <div class="journey-name">Your Transformation Starts Here</div>
+              <div class="journey-desc">Get excited about what's possible when you finally understand your body</div>
+              <div class="journey-meta"><span class="journey-time">&#9201; 3 min</span><span class="journey-tag">Foundation</span></div>
+            </div>
+          </div>
+          <div class="journey-item">
+            <div class="journey-card">
+              <div class="journey-card-header"><span class="journey-number">2</span><span class="journey-icon">&#128279;</span></div>
+              <div class="journey-name">Why Nothing Else Has Worked</div>
+              <div class="journey-desc">The 4 hidden pathways that explain your symptoms &mdash; and change everything</div>
+              <div class="journey-meta"><span class="journey-time">&#9201; 7 min</span><span class="journey-tag">Eye-Opener</span></div>
+            </div>
+          </div>
+          <div class="journey-item">
+            <div class="journey-card">
+              <div class="journey-card-header"><span class="journey-number">3</span><span class="journey-icon">&#128269;</span></div>
+              <div class="journey-name">Connect The Dots On YOUR Body</div>
+              <div class="journey-desc">Interactive tools to discover your unique pattern and stop feeling confused</div>
+              <div class="journey-meta"><span class="journey-time">&#9201; 5 min</span><span class="journey-tag">Interactive</span></div>
+            </div>
+          </div>
+          <div class="journey-item">
+            <div class="journey-card">
+              <div class="journey-card-header"><span class="journey-number">4</span><span class="journey-icon">&#129504;</span></div>
+              <div class="journey-name">Finally Understand What's Really Happening</div>
+              <div class="journey-desc">The science made simple &mdash; so you can explain it to anyone (even yourself)</div>
+              <div class="journey-meta"><span class="journey-time">&#9201; 8 min</span><span class="journey-tag">Deep Dive</span></div>
+            </div>
+          </div>
+          <div class="journey-item">
+            <div class="journey-card">
+              <div class="journey-card-header"><span class="journey-number">5</span><span class="journey-icon">&#129367;</span></div>
+              <div class="journey-name">Stop Guessing, Start Healing</div>
+              <div class="journey-desc">Exactly what to eat, what to avoid, and which supplements actually help</div>
+              <div class="journey-meta"><span class="journey-time">&#9201; 10 min</span><span class="journey-tag">Action Plan</span></div>
+            </div>
+          </div>
+          <div class="journey-item">
+            <div class="journey-card">
+              <div class="journey-card-header"><span class="journey-number">6</span><span class="journey-icon">&#128197;</span></div>
+              <div class="journey-name">Wake Up With A Plan Every Day</div>
+              <div class="journey-desc">Your complete daily protocol &mdash; no more wondering "what should I do?"</div>
+              <div class="journey-meta"><span class="journey-time">&#9201; 6 min</span><span class="journey-tag">Protocol</span></div>
+            </div>
+          </div>
+          <div class="journey-item">
+            <div class="journey-card">
+              <div class="journey-card-header"><span class="journey-number">7</span><span class="journey-icon">&#9889;</span></div>
+              <div class="journey-name">Accelerate Your Results</div>
+              <div class="journey-desc">How to take your progress even further with The Axos System</div>
+              <div class="journey-meta"><span class="journey-time">&#9201; 3 min</span><span class="journey-tag">Next Steps</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="journey-cta-wrap">
+          <p class="journey-cta-text">Women who completed the masterclass reported feeling noticeably different within the first 2 weeks.</p>
+          <a href="https://www.ibdassist.com/pages/masterclasslp" class="journey-cta-btn">See What's Inside &rarr;</a>
+          <div class="journey-cta-features"><span>&#128274; 60-Day Guarantee</span><span>&#9889; Instant Access</span><span>&#128241; Mobile Friendly</span></div>
+        </div>
+      </div>
+
+      <!-- Sneak Peek Previews -->
+      <div class="peek-section">
+        <div class="peek-card">
+          <div class="peek-card-header">
+            <span class="peek-eyebrow">&#128064; Sneak Peek</span>
+            <span class="peek-icon">&#129516;</span>
+            <div class="peek-title">End Mealtime Guesswork</div>
+            <div class="peek-subtitle">Know what heals and what hurts...</div>
+          </div>
+          <div class="peek-card-body">
+            <div class="peek-blur-overlay">
+              <div class="peek-food-group">
+                <div class="peek-food-cat">&#9989; Thyroid-Supporting</div>
+                <div class="peek-food-items">
+                  <span class="peek-food-item">Wild salmon</span>
+                  <span class="peek-food-item">Brazil nuts</span>
+                  <span class="peek-food-item">Seaweed</span>
+                  <span class="peek-food-item">Eggs</span>
+                  <span class="peek-food-item">+ 12 more</span>
+                </div>
+              </div>
+              <div class="peek-food-group">
+                <div class="peek-food-cat">&#127807; Gut-Healing</div>
+                <div class="peek-food-items">
+                  <span class="peek-food-item">Fermented veggies</span>
+                  <span class="peek-food-item">Collagen</span>
+                  <span class="peek-food-item">Ginger</span>
+                  <span class="peek-food-item">+ 15 more</span>
+                </div>
+              </div>
+              <div class="peek-food-group">
+                <div class="peek-food-cat">&#9888;&#65039; Foods to Limit</div>
+                <div class="peek-food-items">
+                  <span class="peek-food-item">Gluten (here's why...)</span>
+                  <span class="peek-food-item">Soy (the truth...)</span>
+                  <span class="peek-food-item">+ full list</span>
+                </div>
+              </div>
+            </div>
+            <div style="text-align:center;">
+              <a href="https://www.ibdassist.com/pages/masterclasslp" class="peek-unlock-btn">Get the Full Guide &rarr;</a>
+            </div>
+          </div>
+        </div>
+        <div class="peek-card">
+          <div class="peek-card-header">
+            <span class="peek-eyebrow">&#128203; Sneak Peek</span>
+            <span class="peek-icon">&#128506;</span>
+            <div class="peek-title">Your Daily Roadmap</div>
+            <div class="peek-subtitle">No more "where do I start?"...</div>
+          </div>
+          <div class="peek-card-body">
+            <div class="peek-blur-overlay">
+              <div class="peek-protocol-phase">
+                <h4>Phase 1: Foundation (Days 1-14)</h4>
+                <p>Remove inflammatory triggers, introduce gut-healing basics...</p>
+              </div>
+              <div class="peek-protocol-phase">
+                <h4>Phase 2: Rebuild (Days 15-30)</h4>
+                <p>Add targeted supplements, optimize digestion...</p>
+              </div>
+              <div class="peek-protocol-phase">
+                <h4>Phase 3: Optimize (Days 31-60)</h4>
+                <p>Fine-tune based on your response, lock in results...</p>
+              </div>
+            </div>
+            <div style="text-align:center;">
+              <a href="https://www.ibdassist.com/pages/masterclasslp" class="peek-unlock-btn">Get Your Protocol &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Proof -->
+      <div class="insight-box" style="background:linear-gradient(135deg,var(--cyan-100),#ede9fe);border-color:var(--cyan-200);">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px;">
+          <span style="color:var(--warning);font-size:16px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span style="font-size:14px;font-weight:600;">What others are saying</span>
+        </div>
+        <div style="font-size:14px;font-style:italic;color:var(--gray-700);line-height:1.7;margin-bottom:12px;">
+          "This assessment connected so many dots for me. I always thought my bloating and brain fog were separate issues. Turns out they're completely linked. The masterclass showed me exactly what to do about it."
+        </div>
+        <div style="font-size:13px;font-weight:600;color:var(--cyan-600);">&mdash; Sarah K., Verified Buyer</div>
+      </div>
+
+      <div class="results-footer">
+        <p>This assessment is for educational purposes only and is not medical advice.<br>Consult with your healthcare provider about your specific situation.</p>
+        <p style="margin-top:8px;">&copy; 2026 IBD Assist. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+// ============================================================
+// QUIZ ENGINE — Modeled exactly on working IBD Assist quiz
+// ============================================================
+var answers = {};
+var totalQuestions = 12;
+var currentQ = 0;
+var categoryNames = ["Energy & Fatigue", "Mental Clarity", "Digestive Health", "Weight & Metabolism", "Temperature", "Hair & Skin", "Digestive Health", "Mood & Wellbeing", "Food Reactions", "Sleep Quality", "Timeline", "What You Have Tried"];
+
+function startQuiz() {
+  document.querySelectorAll(".phase").forEach(function(p) { p.classList.remove("active"); });
+  document.getElementById("quizPhase").classList.add("active");
+  currentQ = 0;
+  answers = {};
+  updateProgress();
+  window.scrollTo({ top: 0 });
+}
+
+function updateProgress() {
+  var pct = Math.round(((currentQ + 1) / totalQuestions) * 100);
+  document.getElementById("quizProgressFill").style.width = pct + "%";
+  document.getElementById("progressCount").textContent = (currentQ + 1) + " of " + totalQuestions;
+  document.getElementById("categoryLabel").textContent = categoryNames[currentQ];
+  document.getElementById("backBtn").disabled = (currentQ === 0);
+  var isMulti = (currentQ === 11);
+  var nextBtn = document.getElementById("nextBtn");
+  if (isMulti) {
+    nextBtn.style.display = "";
+    nextBtn.disabled = !answers[currentQ] || answers[currentQ].length === 0;
+  } else {
+    nextBtn.style.display = "none";
+  }
+}
+
+function selectOption(el) {
+  var container = el.closest(".options-list");
+  container.querySelectorAll(".option-btn").forEach(function(o) { o.classList.remove("selected"); });
+  el.classList.add("selected");
+  var qid = parseInt(el.getAttribute("data-qid"));
+  answers[qid] = [parseInt(el.getAttribute("data-oid"))];
+  setTimeout(function() { advanceFrom(qid); }, 400);
+}
+
+function toggleMulti(el) {
+  el.classList.toggle("selected");
+  var container = el.closest(".options-list");
+  var qid = parseInt(el.getAttribute("data-qid"));
+  var selected = container.querySelectorAll(".option-btn.selected");
+  answers[qid] = [];
+  selected.forEach(function(btn) { answers[qid].push(parseInt(btn.getAttribute("data-oid"))); });
+  document.getElementById("nextBtn").disabled = (answers[qid].length === 0);
+}
+
+function advanceFrom(qid) {
+  document.getElementById("q" + qid).classList.remove("active");
+  if (qid < totalQuestions - 1) {
+    currentQ = qid + 1;
+    document.getElementById("q" + currentQ).classList.add("active");
+    updateProgress();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } else {
+    showCalculating();
+  }
+}
+
+function nextQuestion() {
+  if (!answers[currentQ] || answers[currentQ].length === 0) return;
+  advanceFrom(currentQ);
+}
+
+function prevQuestion() {
+  if (currentQ === 0) return;
+  document.getElementById("q" + currentQ).classList.remove("active");
+  currentQ--;
+  document.getElementById("q" + currentQ).classList.add("active");
+  updateProgress();
+}
+
+function showCalculating() {
+  document.querySelectorAll(".phase").forEach(function(p) { p.classList.remove("active"); });
+  document.getElementById("calcPhase").classList.add("active");
+  window.scrollTo({ top: 0 });
+  var steps = ["calcStep1", "calcStep2", "calcStep3", "calcStep4", "calcStep5"];
+  var bar = document.getElementById("calcProgressFill");
+  var i = 0;
+  var interval = setInterval(function() {
+    if (i < steps.length) {
+      if (i > 0) {
+        document.getElementById(steps[i - 1]).classList.remove("active");
+        document.getElementById(steps[i - 1]).classList.add("done");
+      }
+      document.getElementById(steps[i]).classList.add("active");
+      bar.style.width = ((i + 1) / steps.length * 100) + "%";
+      i++;
+    } else {
+      clearInterval(interval);
+      setTimeout(showEmailGate, 600);
+    }
+  }, 700);
+}
+
+function showEmailGate() {
+  document.querySelectorAll(".phase").forEach(function(p) { p.classList.remove("active"); });
+  document.getElementById("emailPhase").classList.add("active");
+  window.scrollTo({ top: 0 });
+  setTimeout(function() { document.getElementById("emailInput").focus(); }, 400);
+  document.getElementById("emailInput").addEventListener("keydown", function(e) {
+    if (e.key === "Enter") { e.preventDefault(); submitEmail(); }
+  });
+}
+
+function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function submitEmail() {
+  var email = document.getElementById("emailInput").value.trim();
+  var errorEl = document.getElementById("emailError");
+  var btn = document.getElementById("emailSubmitBtn");
+  if (!email || !validateEmail(email)) {
+    errorEl.textContent = "Please enter a valid email address.";
+    errorEl.classList.add("show");
+    document.getElementById("emailInput").focus();
+    return;
+  }
+  errorEl.classList.remove("show");
+  btn.disabled = true;
+  btn.textContent = "Unlocking Your Results...";
+  var result = calculateScore();
+  var score = result.score;
+  var pathways = result.pathways;
+  var sorted = Object.entries(pathways).sort(function(a, b) { return b[1] - a[1]; });
+  var topPathway = sorted[0];
+  // =============================================
+  // KLAVIYO INTEGRATION
+  var KLAVIYO_COMPANY_ID = "WxJqYK";
+  var KLAVIYO_LIST_ID = "XVbWS8";
+  // =============================================
+  var payload = {
+    data: {
+      type: "subscription",
+      attributes: {
+        custom_source: "Gut-Thyroid Assessment",
+        profile: {
+          data: {
+            type: "profile",
+            attributes: {
+              email: email,
+              properties: {
+                "Source": "gut-thyroid-assessment",
+                "Assessment Score": score,
+                "Top Pathway": topPathway[0],
+                "Top Pathway Score": topPathway[1],
+                "Conversion Score": pathways.conversion,
+                "Absorption Score": pathways.absorption,
+                "Inflammation Score": pathways.inflammation,
+                "Microbiome Score": pathways.microbiome,
+                "Score Severity": score <= 30 ? "Mild" : score <= 60 ? "Moderate" : "Significant"
+              }
+            }
+          }
+        }
+      },
+      relationships: {
+        list: { data: { type: "list", id: KLAVIYO_LIST_ID } }
+      }
+    }
+  };
+  fetch("https://a.klaviyo.com/client/subscriptions/?company_id=" + KLAVIYO_COMPANY_ID, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "revision": "2024-02-15" },
+    body: JSON.stringify(payload)
+  })
+  .then(function() { showResults(); })
+  .catch(function() { showResults(); });
+}
+
+function calculateScore() {
+  var totalScore = 0;
+  var maxPossible = 0;
+  var pathways = { conversion: 0, absorption: 0, inflammation: 0, microbiome: 0 };
+  for (var qi = 0; qi < 12; qi++) {
+    var container = document.getElementById("q" + qi);
+    var selected = container.querySelectorAll(".option-btn.selected");
+    var allBtns = container.querySelectorAll(".option-btn");
+    var isMulti = container.querySelector(".options-list").getAttribute("data-type") === "multi";
+    if (isMulti) {
+      allBtns.forEach(function(btn) {
+        maxPossible += parseInt(btn.getAttribute("data-value") || "0");
+      });
+    } else {
+      var maxVal = 0;
+      allBtns.forEach(function(btn) {
+        var v = parseInt(btn.getAttribute("data-value") || "0");
+        if (v > maxVal) maxVal = v;
+      });
+      maxPossible += maxVal;
+    }
+    selected.forEach(function(btn) {
+      totalScore += parseInt(btn.getAttribute("data-value") || "0");
+      pathways.conversion += parseInt(btn.getAttribute("data-conv") || "0");
+      pathways.absorption += parseInt(btn.getAttribute("data-abs") || "0");
+      pathways.inflammation += parseInt(btn.getAttribute("data-inf") || "0");
+      pathways.microbiome += parseInt(btn.getAttribute("data-mic") || "0");
+    });
+  }
+  var score = Math.round((totalScore / Math.max(maxPossible, 1)) * 100);
+  var pMax = { conversion: 22, absorption: 18, inflammation: 22, microbiome: 20 };
+  Object.keys(pathways).forEach(function(p) {
+    pathways[p] = Math.min(100, Math.round((pathways[p] / pMax[p]) * 100));
+  });
+  return { score: score, pathways: pathways };
+}
+
+function showResults() {
+  document.querySelectorAll(".phase").forEach(function(p) { p.classList.remove("active"); });
+  document.getElementById("resultsPhase").classList.add("active");
+  window.scrollTo({ top: 0 });
+  var result = calculateScore();
+  var score = result.score;
+  var pathways = result.pathways;
+  // Animate score
+  var displayed = 0;
+  var scoreEl = document.getElementById("finalScore");
+  var ringEl = document.getElementById("scoreRingFill");
+  var circumference = 2 * Math.PI * 80;
+  var interval = setInterval(function() {
+    displayed++;
+    if (displayed > score) { clearInterval(interval); return; }
+    scoreEl.textContent = displayed;
+    ringEl.style.strokeDashoffset = circumference - (displayed / 100) * circumference;
+  }, 20);
+  // Severity
+  var sevEl = document.getElementById("scoreSeverity");
+  if (score <= 30) {
+    sevEl.textContent = "Mild Connection Pattern";
+    sevEl.className = "score-severity mild";
+  } else if (score <= 60) {
+    sevEl.textContent = "Moderate Connection Pattern";
+    sevEl.className = "score-severity moderate";
+  } else {
+    sevEl.textContent = "Significant Connection Pattern";
+    sevEl.className = "score-severity significant";
+  }
+  // Pathway cards
+  var pathwayData = [
+    { key: "conversion", icon: "\uD83D\uDD04", name: "Hormone Conversion", desc: "How well your body converts T4 to active T3 in the gut." },
+    { key: "absorption", icon: "\uD83E\uDDEA", name: "Nutrient Absorption", desc: "How well your gut absorbs the nutrients your thyroid needs." },
+    { key: "inflammation", icon: "\uD83D\uDD25", name: "Inflammation Cascade", desc: "Gut inflammation affecting thyroid function and immunity." },
+    { key: "microbiome", icon: "\uD83E\uDDA0", name: "Microbiome Impact", desc: "How your gut bacteria influence thyroid health." }
+  ];
+  var cardsHTML = "";
+  pathwayData.forEach(function(pd) {
+    var val = pathways[pd.key];
+    var sev = val <= 30 ? "low" : val <= 60 ? "medium" : "high";
+    var sevLabel = val <= 30 ? "Low concern" : val <= 60 ? "Moderate concern" : "High concern";
+    cardsHTML += "<div class=\"pathway-card\"><div class=\"pathway-icon\">" + pd.icon + "</div><div class=\"pathway-info\"><div class=\"pathway-name\">" + pd.name + "</div><div class=\"pathway-score-bar\"><div class=\"pathway-score-fill " + sev + "\" style=\"width:" + val + "%\"></div></div><div class=\"pathway-severity " + sev + "\">" + sevLabel + " &mdash; " + val + "%</div><div class=\"pathway-desc\">" + pd.desc + "</div></div></div>";
+  });
+  document.getElementById("pathwayCards").innerHTML = cardsHTML;
+  // Insight box
+  var sorted = Object.entries(pathways).sort(function(a, b) { return b[1] - a[1]; });
+  var topPathway = sorted[0];
+  var topName = "";
+  pathwayData.forEach(function(p) { if (p.key === topPathway[0]) topName = p.name; });
+  var insightHTML = "<h3>What Your Score Means</h3>";
+  if (score <= 30) {
+    insightHTML += "<p>Your score of <strong>" + score + "/100</strong> suggests a <strong>mild gut-thyroid connection pattern</strong>. While your symptoms are relatively contained, there is still room for optimization &mdash; especially in your <strong>" + topName + "</strong> pathway.</p>";
+    insightHTML += "<p>Addressing this now &mdash; before it progresses &mdash; could help you maintain energy, clarity, and vitality long-term.</p>";
+  } else if (score <= 60) {
+    insightHTML += "<p>Your score of <strong>" + score + "/100</strong> reveals a <strong>moderate gut-thyroid connection pattern</strong>. Your strongest signal is in the <strong>" + topName + "</strong> pathway, which is likely driving many of your daily symptoms.</p>";
+    insightHTML += "<p>This pattern is very common among women 35+ and explains why addressing just your gut OR just your thyroid has not given you lasting results. <strong>Both systems need support together.</strong></p>";
+  } else {
+    insightHTML += "<p>Your score of <strong>" + score + "/100</strong> indicates a <strong>significant gut-thyroid connection pattern</strong>. Your <strong>" + topName + "</strong> pathway is particularly affected, creating a cycle that is driving your symptoms.</p>";
+    insightHTML += "<p>The good news? <strong>Women with higher scores often see the most dramatic improvement</strong> when they finally address both systems together. You have significant room for positive change.</p>";
+  }
+  document.getElementById("insightBox").innerHTML = insightHTML;
+  // Recommendations
+  var recs = [];
+  if (pathways.conversion > 40) recs.push({ icon: "\uD83E\uDD8B", text: "<strong>Support T4 to T3 conversion</strong> &mdash; Focus on selenium-rich foods (Brazil nuts, wild fish) and reducing stress, which blocks conversion." });
+  if (pathways.absorption > 40) recs.push({ icon: "\uD83E\uDDEA", text: "<strong>Improve nutrient absorption</strong> &mdash; Your gut may not be absorbing key thyroid nutrients (zinc, selenium, B12). Gut healing is priority #1." });
+  if (pathways.inflammation > 40) recs.push({ icon: "\uD83D\uDD25", text: "<strong>Reduce gut inflammation</strong> &mdash; Consider removing gluten and dairy for 30 days. Add turmeric, ginger, and omega-3 fatty acids." });
+  if (pathways.microbiome > 40) recs.push({ icon: "\uD83E\uDDA0", text: "<strong>Rebalance your microbiome</strong> &mdash; Add fermented foods (sauerkraut, kimchi) and prebiotic fiber. Your gut bacteria directly affect thyroid function." });
+  recs.push({ icon: "\u23F0", text: "<strong>Address BOTH systems together</strong> &mdash; Your results show interconnected patterns. Single-system approaches (just thyroid meds or just probiotics) are unlikely to resolve the full picture." });
+  if (score > 40) recs.push({ icon: "\uD83D\uDCDA", text: "<strong>Understand the science</strong> &mdash; Knowing exactly HOW your gut and thyroid communicate will help you make better decisions. The Masterclass explains this in detail." });
+  var recsHTML = "";
+  recs.forEach(function(r) {
+    recsHTML += "<div class=\"rec-item\"><span class=\"rec-icon\">" + r.icon + "</span><span class=\"rec-text\">" + r.text + "</span></div>";
+  });
+  document.getElementById("recsList").innerHTML = recsHTML;
+}
+</script>
+</body>
+</html>
